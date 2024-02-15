@@ -1,7 +1,7 @@
 {
   "name": "acf/content-image",
-  "title": "Content afbeelding",
-  "category": "sections",
+  "title": "Content met afbeelding",
+  "category": "section",
   "icon": "format-image",
   "keywords": ["content", "image"],
   "acf": {
