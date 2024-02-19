@@ -1,24 +1,24 @@
-<section class="flex flex-col items-center md:flex-row-reverse gap-5 mx-auto justify-center container {{ class }} ">
+<section class="w-screen p-2 md:p-10 md:py-14">
+	<div class="flex flex-col items-center md:flex-row-reverse gap-5 mx-auto justify-center container">
+		<div class="flex flex-col md:w-1/2 w-full">
 
-<div class="flex flex-col md:w-1/2 w-full">
+			<p class="text-green-900 font-semibold my-1">{{ sub_title }}</p>
 
-		<p class="text-green-900 font-semibold my-1">{{ sub_title }}</p>
+			<h1>{{ title }}</h1>
 
-		<h1>{{ title }}</h1>
+			{% include 'atoms/text.twig' with {'text': content|raw} %}
 
-		{% include 'atoms/text.twig' with {'text': content|raw} %}
+			<div class=" flex gap-5" >
+				{% if buttons %}
+					{% for button in buttons %}
+						{% include 'atoms/button.twig' with button %}
+					{% endfor %}
+				{% endif %}
+			</div>
+		</div>
 
-		<div class=" flex gap-5" >
-			{% if buttons %}
-				{% for button in buttons %}
-					{% include 'atoms/button.twig' with button %}
-				{% endfor %}
-			{% endif %}
+		<div>
+			{% include 'atoms/image.twig' with {'image' : image_id} %}
 		</div>
 	</div>
-
-	<div>
-		{% include 'atoms/image.twig' with {'image' : image_id} %}
-	</div>
-
 </section>
