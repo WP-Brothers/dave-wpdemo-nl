@@ -2,7 +2,7 @@
 
 add_filter('wpb_twig_info-box_context', function ($context) {
     if (isset($context['repeater'])) {
-        $repeater_items = array();
+        $repeater_items = [];
         
         foreach ($context['repeater'] as $item) {
             $repeater_items[] = $item;

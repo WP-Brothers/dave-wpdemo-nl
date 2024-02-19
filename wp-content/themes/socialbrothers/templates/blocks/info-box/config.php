@@ -45,10 +45,10 @@ $block_data = [
                 ],
                  'font-size' => [
                          'key'   => "{$prefix}_repeater_box_icon_size",
-                    'label' => __('formaat van de icoon', '_SBB'),
+                    'label' => __('Formaat van de icoon', '_SBB'),
                     'name' => 'box_icon_size',
                     'type' => 'select',
-                    'instructions' => __('Selecteer een gewenste formaat', '_SBB'),
+                    'instructions' => __('Selecteer het gewenste formaat', '_SBB'),
                     'choices' => [
                         'text-lg' => __('Klein', '_SBB'),
                         'text-xl' => __('Normaal', '_SBB'),
@@ -73,7 +73,7 @@ $block_data = [
                 ],
                 [
                     'key'   => "{$prefix}_repeater_box_title",
-                    'label'   => __('Title', '_SBB'),
+                    'label'   => __('Titel', '_SBB'),
                     'name'  => 'box_title',
                     'type'  => 'text',
                 ],

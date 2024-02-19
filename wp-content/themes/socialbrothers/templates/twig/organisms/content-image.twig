@@ -3,8 +3,10 @@
 		<div class="flex flex-col md:w-1/2 w-full">
 
 			<p class="text-green-900 font-semibold my-1">{{ sub_title }}</p>
-
-			<h1>{{ title }}</h1>
+			
+			{% if title != '' %}
+				<h1>{{ title }}</h1>
+			{% endif %}
 
 			{% include 'atoms/text.twig' with {'text': content|raw} %}
 

@@ -18,8 +18,12 @@
 					} %}
 				{% endif %}
 
-				<p class="font-semibold text-2xl">{{ info_box.box_title }}</p>
+				{% if title != '' %}
+					<p class="font-semibold text-2xl">{{ info_box.box_title }}</p>
+				{% endif %}
+
 				{% include 'atoms/text.twig' with {'text': info_box.box_content|raw} %}
+				
 				{% if info_box.box_link %}
 					{% include 'atoms/link.twig' with {'link': info_box.box_link, 'style': info_box.box_link_type, 'icon': info_box.box_link_icon} %}
 				{% endif %}
