@@ -21,6 +21,7 @@ function wpb_get_button_types(): array
 }
 
 add_action('admin_head', 'add_fonts_to_admin_head', 10, 0);
+add_action('wp_head', 'add_fonts_to_admin_head', 10, 0);
 
 function add_fonts_to_admin_head(): void
 {
