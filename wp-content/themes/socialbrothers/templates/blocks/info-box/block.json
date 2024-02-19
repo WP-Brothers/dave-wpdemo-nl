@@ -1,11 +1,11 @@
 {
-  "name": "acf/content-image",
-  "title": "Content met afbeelding",
+  "name": "acf/info-box",
+  "title": "Info box",
   "category": "sections",
-  "icon": "format-image",
-  "keywords": ["content", "image"],
+  "icon": "info",
+  "keywords": ["info", "pop-up", "box", ""],
   "acf": {
-      "mode": "preview"
+      "mode": "edit"
   },
   "supports": {
       "anchor": true,
