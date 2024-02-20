@@ -4,7 +4,7 @@
 
 			<div class="md:w-3/4">
 				{% if hero_title != '' %}
-					<h1 class"{{ hero_title_size}}">{{ hero_title }}</h1>
+					<h1 class="{{ hero_title_size}}">{{ hero_title }}</h1>
 				{% endif %}
 
 				{% include 'atoms/text.twig' with {'text': hero_content|raw} %}
