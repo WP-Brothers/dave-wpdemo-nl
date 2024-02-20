@@ -18,6 +18,19 @@ $block_data = [
             'name'  => 'sub_title',
             'type'  => 'text',
         ],
+        'text-color' => [
+            'key'   => "{$prefix}_subtitle_color",
+            'label' => __('Text kleur subtitel', '_SBB'),
+            'name' => 'subtitle_color',
+            'type' => 'select',
+            'instructions' => __('Selecteer de subtitel kleur', '_SBB'),
+            'choices' => [
+                '' => __('Geen', '_SBB'),
+                'text-black' => __('Zwart', '_SBB'),
+                'text-secondary' => __('Groen', '_SBB'),
+                'text-primary' => __('Oranje', '_SBB'),
+            ],
+        ],
         [
             'key'   => "{$prefix}_title",
             'label' => __('Titel', '_SBB'),
