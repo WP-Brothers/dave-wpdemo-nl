@@ -1,6 +1,6 @@
 <?php
 
-$prefix     = 'block_content-image';
+$prefix     = 'block_hero';
 $block_data = [
     'key'    => $prefix,
     'fields' => [
@@ -13,34 +13,31 @@ $block_data = [
             'multi_expand' => 1,
         ],
         [
-            'key'   => "{$prefix}_sub_title",
-            'label' => __('Subtitel', '_SBB'),
-            'name'  => 'sub_title',
+            'key'   => "{$prefix}_hero_title",
+            'label' => __('Titel', '_SBB'),
+            'name'  => 'hero_title',
             'type'  => 'text',
         ],
-        'text-color' => [
-            'key'   => "{$prefix}_subtitle_color",
-            'label' => __('Tekst kleur subtitel', '_SBB'),
-            'name' => 'subtitle_color',
+        'font-size' => [
+                    'key'   => "{$prefix}_hero_title_size",
+            'label' => __('Titel formaat', '_SBB'),
+            'name' => 'hero_title_size',
             'type' => 'select',
-            'instructions' => __('Selecteer de subtitel kleur', '_SBB'),
+            'instructions' => __('Selecteer het gewenste titel formaat', '_SBB'),
             'choices' => [
-                '' => __('Geen', '_SBB'),
-                'text-black' => __('Zwart', '_SBB'),
-                'text-secondary' => __('Groen', '_SBB'),
-                'text-primary' => __('Oranje', '_SBB'),
+                'text-2xl' => __('Klein', '_SBB'),
+                'text-3xl' => __('Normaal', '_SBB'),
+                'text-4xl' => __('Groot', '_SBB'),
+                'text-5xl' => __('Extra groot', '_SBB'),
+            ],
+                'wrapper' => [
+                'width' => '25%',
             ],
         ],
         [
-            'key'   => "{$prefix}_title",
-            'label' => __('Titel', '_SBB'),
-            'name'  => 'title',
-            'type'  => 'text',
-        ],
-        [
-            'key'          => "{$prefix}_content",
+            'key'          => "{$prefix}_hero_content",
             'label'        => __('Tekst', '_SBB'),
-            'name'         => 'content',
+            'name'         => 'hero_content',
             'type'         => 'wysiwyg',
             'toolbar'      => 'contentcenter',
             'tabs'         => 'visual',

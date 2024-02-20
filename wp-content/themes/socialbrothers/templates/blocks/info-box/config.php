@@ -128,14 +128,14 @@ $block_data = [
                 [
                     'key'     => "{$prefix}_repeater_box_icon_pos",
                     'name'    => 'box_icon_pos',
-                    'label'   => __('Icoon Rechts?', '_SBB'),
+                    'label'   => __('Icoon rechts?', '_SBB'),
                     'type'    => 'true_false',
                     'ui'      => true,
                     'wrapper' => ['width' => 33],
                     'conditional_logic' => [
                         [
                             [
-                                'field'    => "{$prefix}_buttons_use_icon",
+                                'field'    => "{$prefix}_repeater_box_use_icon",
                                 'operator' => '==',
                                 'value'    => 1,
                             ],

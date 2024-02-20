@@ -1,5 +1,6 @@
 {% if url %}
     <a href="{{ url }}" class="btn {{ type|default('btn--solid') }}" target="{{ target|default('_self') }}">
+
         {% if icon %}
             {% include 'atoms/icon.twig' %}
         {% endif %}
