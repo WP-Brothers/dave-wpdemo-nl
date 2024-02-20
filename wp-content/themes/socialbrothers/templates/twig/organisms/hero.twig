@@ -2,15 +2,15 @@
 	<div class="flex flex-col items-center md:flex-row gap-10 mx-auto justify-center container">
 		<div class="flex flex-col md:w-1/2 w-full">
 
-			<section class="md:w-3/4">
+			<div class="md:w-3/4">
 				{% if hero_title != '' %}
 					<h1 class"{{ hero_title_size}}">{{ hero_title }}</h1>
 				{% endif %}
 
 				{% include 'atoms/text.twig' with {'text': hero_content|raw} %}
-			</section>
+			</div>
 
-			<div class=" flex gap-5">
+			<div class="flex gap-5">
 				{% if buttons %}
 					{% for button in buttons %}
 						{% include 'atoms/button.twig' with button %}
@@ -19,8 +19,9 @@
 			</div>
 		</div>
 
-		<div>
+		<figure>
 			{% include 'atoms/image.twig' with {'image' : image_id} %}
-		</div>
+		</figure>
+
 	</div>
 </section>

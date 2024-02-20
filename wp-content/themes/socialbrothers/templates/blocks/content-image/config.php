@@ -20,7 +20,7 @@ $block_data = [
         ],
         'text-color' => [
             'key'   => "{$prefix}_subtitle_color",
-            'label' => __('Text kleur subtitel', '_SBB'),
+            'label' => __('Tekst kleur subtitel', '_SBB'),
             'name' => 'subtitle_color',
             'type' => 'select',
             'instructions' => __('Selecteer de subtitel kleur', '_SBB'),
@@ -50,7 +50,7 @@ $block_data = [
             'key'          => "{$prefix}_buttons",
             'label'        => __('Knoppen', '_SBB'),
             'name'         => 'buttons',
-            'button_label' => __('Nieuwe Button', '_SBB'),
+            'button_label' => __('Nieuwe knop', '_SBB'),
             'type'         => 'repeater',
             'max'          => 2,
             'layout'       => 'block',
@@ -106,7 +106,7 @@ $block_data = [
                 [
                     'key'     => "{$prefix}_buttons_icon_pos",
                     'name'    => 'icon_pos',
-                    'label'   => __('Icoon Rechts?', '_SBB'),
+                    'label'   => __('Icoon rechts?', '_SBB'),
                     'type'    => 'true_false',
                     'ui'      => true,
                     'wrapper' => [
@@ -142,7 +142,7 @@ $block_data = [
         [
             'key'   => "{$prefix}_big",
             'name'  => 'big',
-            'label' => __('afbeelding breeder', '_SBB'),
+            'label' => __('Afbeelding breeder', '_SBB'),
             'type'  => 'true_false',
             'ui'    => true,
         ],
@@ -154,7 +154,7 @@ $block_data = [
             'choices' => [
                 ''                           => __('Vrij', '_SBB'),
                 'aspect-square object-cover' => __('1/1 (vierkant)', '_SBB'),
-                'aspect-video object-cover'  => __('16/9(video)', '_SBB'),
+                'aspect-video object-cover'  => __('16/9 (video)', '_SBB'),
                 'aspect-4/3 object-cover'    => __('4/3', '_SBB'),
                 'aspect-3/4 object-cover'    => __('3/4', '_SBB'),
             ],
