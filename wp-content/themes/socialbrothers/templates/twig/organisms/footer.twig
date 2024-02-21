@@ -7,9 +7,9 @@
 					{% include 'atoms/text.twig' with {'text': content|raw} %}
 				</div>
 
-				<div class='flex flex-col font-semibold text-4xl my-6'>
-					<p>{{ phone }}</p>
-					<p>{{ email }}</p>
+				<div class='flex flex-col font-semibold text-4xl gap-6 my-6'>
+                    <a href="tel:{{ phone_link }}" class='hover:underline'>{{ phone }}</a>
+                    <a href="mailto:{{ email }}" class='hover:underline'>{{ email }}</a>
 				</div>
 			</div>
 
