@@ -85,33 +85,36 @@ function acf_theme_settings()
             [
                 'key'        => "{$prefix}_socials",
                 'name'       => 'socials',
-                'label'      => __('Socials', '_SBB'),
-                'type'       => 'group',
+                'type'       => 'repeater',
+                'label'      => __('Sociaal media iconen', '_SBB'),
+                'layout'      => 'block',
                 'sub_fields' => [
                     [
-                        'key'   => "{$prefix}_socials_facebook",
-                        'name'  => 'facebook',
-                        'label' => __('Facebook', '_SBB'),
-                        'type'  => 'link',
+                        'key'     => "{$prefix}_socials_icon",
+                        'name'    => 'socials_icon',
+                        'label'   => __('Social media platform', '_SBB'),
+                        'type'    => 'select',
+                        'wrapper' => [
+                            'width' => '50%',
+                        ],
+                        'choices' => [
+                            '' => __('Geen', '_SBB'),
+                            'facebook' => __('Facebook', '_SBB'),
+                            'instagram' => __('Instagram', '_SBB'),
+                            'linkedin' => __('Linked In', '_SBB'),
+                            'twitter' => __('X (voormalg Twitter)', '_SBB'),
+                        ],
                     ],
                     [
-                        'key'   => "{$prefix}_socials_instagram",
-                        'name'  => 'instagram',
-                        'label' => __('Instagram', '_SBB'),
+                        'key'   => "{$prefix}_socials_platform",
+                        'name'  => 'socials_platform',
                         'type'  => 'link',
+                        'label' => __('Link', '_SBB'),
+                        'wrapper' => [
+                            'width' => '50%',
+                        ],
                     ],
-                    [
-                        'key'   => "{$prefix}_socials_linkedin",
-                        'name'  => 'linkedin',
-                        'label' => __('LinkedIn', '_SBB'),
-                        'type'  => 'link',
-                    ],
-                    [
-                        'key'   => "{$prefix}_socials_x",
-                        'name'  => 'x',
-                        'label' => __('X (voorheen Twitter)', '_SBB'),
-                        'type'  => 'link',
-                    ],
+                    
                 ],
             ],
 
