@@ -22,7 +22,7 @@ $block_data = [
                 '' => __('Geen', '_SBB'),
                 'bg-secondary' => __('Groen', '_SBB'),
                 'bg-white' => __('Wit', '_SBB'),
-                'bta--cta' => __('Blauw', '_SBB'),
+                'bg-blue-500' => __('Blauw', '_SBB'),
 
             ],
         ],
@@ -156,7 +156,7 @@ $block_data = [
         ],
         [
             'key'          => "{$prefix}_image_tab",
-            'label'        => __('Afbeedling', '_SBB'),
+            'label'        => __('Afbeelding', '_SBB'),
             'name'         => 'image_tab',
             'type'         => 'accordion',
             'open'         => 0,
@@ -172,7 +172,7 @@ $block_data = [
         [
             'key'   => "{$prefix}_big",
             'name'  => 'big',
-            'label' => __('Afbeelding breeder', '_SBB'),
+            'label' => __('Afbeelding breder', '_SBB'),
             'type'  => 'true_false',
             'ui'    => true,
         ],

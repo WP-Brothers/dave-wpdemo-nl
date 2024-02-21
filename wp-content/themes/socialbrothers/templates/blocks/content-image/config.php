@@ -142,7 +142,7 @@ $block_data = [
         [
             'key'   => "{$prefix}_big",
             'name'  => 'big',
-            'label' => __('Afbeelding breeder', '_SBB'),
+            'label' => __('Afbeelding breder', '_SBB'),
             'type'  => 'true_false',
             'ui'    => true,
         ],
