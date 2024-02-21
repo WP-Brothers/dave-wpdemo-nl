@@ -1,6 +1,6 @@
 <?php
 
-$prefix     = 'block_content-image';
+$prefix     = 'block_cta';
 $block_data = [
     'key'    => $prefix,
     'fields' => [
@@ -12,6 +12,42 @@ $block_data = [
             'open'         => 1,
             'multi_expand' => 1,
         ],
+        'background' => [
+            'key'   => "{$prefix}_wrapper_background",
+            'label' => __('Achtergrond kleur', '_SBB'),
+            'name' => 'wrapper_background',
+            'type' => 'select',
+            'instructions' => __('Selecteer een achtergrond kleur', '_SBB'),
+            'choices' => [
+                '' => __('Geen', '_SBB'),
+                'bg-secondary' => __('Groen', '_SBB'),
+                'bg-white' => __('Wit', '_SBB'),
+                'bg-blue-500' => __('Blauw', '_SBB'),
+
+            ],
+        ],
+        [
+            'key'   => "{$prefix}_title",
+            'label' => __('Titel', '_SBB'),
+            'name'  => 'title',
+            'type'  => 'text',
+        ],
+        'font-size' => [
+            'key'   => "{$prefix}_title_size",
+            'label' => __('Titel formaat', '_SBB'),
+            'name' => 'title_size',
+            'type' => 'select',
+            'instructions' => __('Selecteer het gewenste titel formaat', '_SBB'),
+            'choices' => [
+                'text-2xl' => __('Klein', '_SBB'),
+                'text-3xl' => __('Normaal', '_SBB'),
+                'text-4xl' => __('Groot', '_SBB'),
+                'text-5xl' => __('Extra groot', '_SBB'),
+            ],
+                'wrapper' => [
+                'width' => '25%',
+            ],
+        ],
         [
             'key'   => "{$prefix}_sub_title",
             'label' => __('Subtitel', '_SBB'),
@@ -20,22 +56,16 @@ $block_data = [
         ],
         'text-color' => [
             'key'   => "{$prefix}_subtitle_color",
-            'label' => __('Tekst kleur subtitel', '_SBB'),
+            'label' => __('Subtitel tekst kleur', '_SBB'),
             'name' => 'subtitle_color',
             'type' => 'select',
-            'instructions' => __('Selecteer de subtitel kleur', '_SBB'),
+            'instructions' => __('Selecteer de subtitel tekst kleur', '_SBB'),
             'choices' => [
                 '' => __('Geen', '_SBB'),
                 'text-black' => __('Zwart', '_SBB'),
                 'text-secondary' => __('Groen', '_SBB'),
-                'text-primary' => __('Oranje', '_SBB'),
+                'text-white' => __('Wit', '_SBB'),
             ],
-        ],
-        [
-            'key'   => "{$prefix}_title",
-            'label' => __('Titel', '_SBB'),
-            'name'  => 'title',
-            'type'  => 'text',
         ],
         [
             'key'          => "{$prefix}_content",
@@ -126,7 +156,7 @@ $block_data = [
         ],
         [
             'key'          => "{$prefix}_image_tab",
-            'label'        => __('Afbeedling', '_SBB'),
+            'label'        => __('Afbeelding', '_SBB'),
             'name'         => 'image_tab',
             'type'         => 'accordion',
             'open'         => 0,
