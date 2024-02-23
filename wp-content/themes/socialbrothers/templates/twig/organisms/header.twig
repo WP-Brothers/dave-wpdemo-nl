@@ -55,14 +55,16 @@
 
 			<div class='flex flex-row items-center space-x-8'>
 
-				<input type='checkbox' name='search_toggle' id='search_toggle' class='hidden'/>
-				<label for='search_toggle' class='flex items-center gap-2 cursor-pointer'>
-					{% include 'atoms/icon.twig' with {
-                        icon  : 'search',
-                        color : 'text-primary',
-                        size  : 'text-2xl'
-                        } %}
-				</label>
+				<div class='hidden md:block'>
+					<input type='checkbox' name='search_toggle' id='search_toggle' class='hidden'/>
+					<label for='search_toggle' class='flex items-center gap-2 cursor-pointer'>
+						{% include 'atoms/icon.twig' with {
+							icon  : 'search',
+							color : 'text-primary',
+							size  : 'text-2xl'
+							} %}
+					</label>
+				</div>
 
 				{% if buttons %}
 					{% for button in buttons %}
@@ -75,6 +77,17 @@
 					{% endfor %}
 				{% endif %}
 			</div>
+
+			<div class='flex md:hidden'>
+				<input type='checkbox' name='menu_toggle' id='menu_toggle' class='hidden'/>
+				<label for='menu_toggle' class='flex items-center gap-2 cursor-pointer'>
+
+					{% include 'atoms/icon.twig' with {
+						icon  : 'menu',
+						color : 'text-primary',
+						size  : 'text-4xl'
+						} %}
+				</label>
 
 		</section>
 

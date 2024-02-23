@@ -1,18 +1,19 @@
 <section class="w-screen p-2 py-10 md:p-10 md:py-14">
 	<div class="flex flex-col items-center md:flex-row-reverse gap-5 mx-auto justify-center container">
-		<div class="flex flex-col md:w-1/2 w-full">
+		<div class="flex flex-col md:w-1/2 w-full space-y-4">
 
 			{% if sub_title != '' %}
 				<p class="{{ subtitle_color}} font-semibold my-1">{{ sub_title }}</p>
 			{% endif %}
 
 			{% if title != '' %}
-				<h1>{{ title }}</h1>
+				<h2 class="{{ title_size }}">{{ title }}</h2>
+
 			{% endif %}
 
 			{% include 'atoms/text.twig' with {'text': content|raw} %}
 
-			<div class="flex gap-5" >
+			<div class="flex gap-5">
 				{% if buttons %}
 					{% for button in buttons %}
 						{% include 'atoms/button.twig' with button %}
