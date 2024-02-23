@@ -1,9 +1,12 @@
-{% if url %}
-<a href='{{ url }}' class='underline hover:no-underline font-bold' target='{{ target|default('_self') }}'>
+{% if link.url %}
+    <a href="{{ link.url }}" class="btn {{ style|default('btn--solid') }} w-fit" target="{{ link.target|default('_self') }}">
+
 		{% if icon %}
 			{% include 'atoms/icon.twig' %}
 		{% endif %}
 
-        {{ title|raw }}
+        {{ link.title|raw }}
+
 	</a>
 {% endif %}
+
