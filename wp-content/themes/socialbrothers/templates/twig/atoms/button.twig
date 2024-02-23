@@ -1,9 +1,10 @@
 {% if url %}
-    <a href="{{ url }}" class="btn {{ type|default('btn--solid') }} min-w-fit" target="{{ target|default('_self') }}">
-        {% if icon %}
-            {% include 'atoms/icon.twig' %}
-        {% endif %}
+	<a href="{{ url }}" class="btn  {{ type|default('btn--solid') }} min-w-fit {{ additional_classes }}" target="{{ target|default('_self') }}">
 
-        {{ title|raw }}
-    </a>
+		{% if icon %}
+			{% include 'atoms/icon.twig' %}
+		{% endif %}
+
+		{{ title|raw }}
+	</a>
 {% endif %}

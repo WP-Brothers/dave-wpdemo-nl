@@ -1,6 +1,5 @@
 .menu-main {
-    
-    @apply flex flex-wrap gap-2 lg:gap-8;  
+    @apply flex flex-wrap gap-4 w-max;
     
     li {
         @apply p-4;

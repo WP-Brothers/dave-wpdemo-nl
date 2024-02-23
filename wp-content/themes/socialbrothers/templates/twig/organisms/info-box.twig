@@ -23,9 +23,17 @@
 				{% endif %}
 
 				{% include 'atoms/text.twig' with {'text': info_box.box_content|raw} %}
-				
+
 				{% if info_box.box_link %}
-					{% include 'atoms/link.twig' with {'link': info_box.box_link, 'style': info_box.box_link_type, 'icon': info_box.box_link_icon} %}
+
+					{% include 'atoms/button.twig' with {
+						title	: info_box.box_link.title,
+						url		: info_box.box_link.url,
+						type	: info_box.box_link_type,
+						additional_classes: 'w-fit',
+						icon	: info_box.box_link_icon
+					} %}
+
 				{% endif %}
 
 			</div>

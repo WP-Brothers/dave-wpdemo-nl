@@ -1,78 +1,100 @@
 <header class='header-nav sticky top-0 flex flex-col w-full items-center py-6 z-100 bg-white'>
 
 	<div class='container'>
-<section class='flex flex-row items-center'>
-<div class='flex flex-row items-center'>
+		<section class='hidden md:flex flex-wrap justify-between pt-4'>
 
-{% if header_meta %}
-{% for item in header_meta %}
-{{ item.header_text}}
+			<div class='flex flex-row space-x-10'>
+				{% if header_meta %}
+					{% for item in header_meta %}
 
-
-	{% endfor %}
-{% endif %}
-
-</div>
-
-<div class='flex flex-row items-center'>
-</div>
-
-
-
-
-    </section>
-		<section class='flex flex-row items-center space-x-12'>
-
-			<a href='{{ logo_link }}' class='max-w-60'>
-				{% include 'atoms/image.twig' with {
-                'image' : logo_id,
-                'image_classes': 'h-15 w-full' } %}
-			</a>
-
-			<nav>
-				{{ menu|raw}}
-			</nav>
-
-			<div>
-                <input type='checkbox' name='search_toggle' id='search_toggle' class='hidden' />
-                <label for='search_toggle' class='flex items-center gap-2 cursor-pointer'>
-                    {% include 'atoms/icon.twig' with {
-                        'icon'  : 'search',
-                        'color' : 'text-primary',
-                        'size'  : 'text-2xl'
-                        } %}
-                </label>
-
-                {% if buttons %}
-                    {% for button in buttons %}
-                        {% include 'atoms/button.twig' with button %}
-                    {% endfor %}
-                {% endif %}
-            </div>
-
-		</section>
-
-        <div class='hidden search-form md:absolute w-full bottom-0 right-0 mb-4 '>
-            <div class='container'>
-                <form action='#' method='get' class='flex justify-end'>
-
-                    <fieldset class='flex flex-row gap-4'>
-                        <input type='text' name='q' placeholder='Zoek naar...'/>
-                        <button type='submit'>
-
-                            {% include 'atoms/icon.twig' with {
-                                'icon'  : 'search',
-                                'color' : 'inherit',
-                                'size'  : 'text-2xl'
+						<div class='flex flex-row gap-4 items-normal'>
+							{% if item.icon %}
+								{% include 'atoms/icon.twig' with {
+                                    icon  : item.icon,
+                                    color : 'text-secondary',
+                                    size  : 'text-2xl',
                                 } %}
-                                Zoek
+							{% endif %}
 
-                        </button>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
+							{% include 'atoms/text.twig' with { text : item.header_text } %}
+						</div>
+					{% endfor %}
+				{% endif %}
+			</div>
 
-	</div>
+			<div class='flex flex-row items-center gap-4'>
+				{% if header_links %}
+					{% for header in header_links %}
+						{% include 'atoms/link.twig' with header.header_links %}
+					{% endfor %}
+				{% endif %}
 
-</header>
+				<form action='#' method='get'>
+					<select name='language' id='language'>
+						<option value='NL'>Nederlands</option>
+						<option value='EN'>Engels</option>
+					</select>
+				</form</div>
+
+			</section>
+
+			<section class='flex md:items-center justify-between'>
+
+				<a href='{{ logo_link }}' class='max-w-60 mr-6'>
+					{% include 'atoms/image.twig' with {
+                image           : logo_id,
+                image_classes   : 'h-18 w-full' } %}
+				</a>
+
+				<nav class=' hidden md:block'>
+					{{ menu|raw}}
+				</nav>
+
+				<div class='flex flex-row items-center space-x-8'>
+
+					<input type='checkbox' name='search_toggle' id='search_toggle' class='hidden'/>
+					<label for='search_toggle' class='flex items-center gap-2 cursor-pointer'>
+						{% include 'atoms/icon.twig' with {
+                        icon  : 'search',
+                        color : 'text-primary',
+                        size  : 'text-2xl'
+                        } %}
+					</label>
+
+					{% if buttons %}
+						{% for button in buttons %}
+							{% include 'atoms/button.twig' with {
+                            url     : button.link.url,
+                            title   : button.link.title,
+                            type    : button.type,
+                            target  : button.link.target,
+                        } %}
+						{% endfor %}
+					{% endif %}
+				</div>
+
+			</section>
+
+			<div class='hidden search-form md:absolute w-full bottom-0 right-0 mb-4 '>
+				<div class='container'>
+					<form action='#' method='get' class='flex justify-end'>
+
+						<fieldset class='flex flex-row gap-4'>
+							<input type='text' name='q' placeholder='Zoek naar...'/>
+							<button type='submit'>
+
+								{% include 'atoms/icon.twig' with {
+                                icon  : 'search',
+                                color : 'inherit',
+                                size  : 'text-2xl'
+                                } %}
+								Zoek
+							</button>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+	</header>
