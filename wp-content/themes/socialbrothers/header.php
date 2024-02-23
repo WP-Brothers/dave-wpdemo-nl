@@ -18,6 +18,13 @@ if (get_field('header_submenu_hover', 'options')) {
  *
  * @noinspection PhpUnhandledExceptionInspection
  */
+$buttons = get_field('header_buttons', 'options');
+if (! empty($buttons)) {
+    var_dump($buttons);
+    $buttons = wpb_build_button_context($buttons);
+    var_dump($buttons);
+        }
+
 Twig::render(
     'header.twig',
     Theme::filter('header_context', [
@@ -26,7 +33,12 @@ Twig::render(
         'header'              => [
             'menu'    => wpb_menu('primary', 2, $menu_classes),
             'logo_id' => get_field('logo', 'options'),
-            'button'  => wpb_build_button_context(get_field('header_button', 'options') ?? []),
+            'header_meta' => get_field('header_meta', 'options') ?? '',
+            // 'meta'    => get_field('header_meta', 'options'),
+            // 'buttons'  => $buttons),
+            'buttons'  => wpb_build_button_context(get_field('header_buttons', 'options') ?? []),
         ],
     ])
 );
+
+var_dump(get_field('header_meta', 'options'));

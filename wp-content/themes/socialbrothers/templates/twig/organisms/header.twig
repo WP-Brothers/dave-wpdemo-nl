@@ -1,0 +1,78 @@
+<header class='header-nav sticky top-0 flex flex-col w-full items-center py-6 z-100 bg-white'>
+
+	<div class='container'>
+<section class='flex flex-row items-center'>
+<div class='flex flex-row items-center'>
+
+{% if header_meta %}
+{% for item in header_meta %}
+{{ item.header_text}}
+
+
+	{% endfor %}
+{% endif %}
+
+</div>
+
+<div class='flex flex-row items-center'>
+</div>
+
+
+
+
+    </section>
+		<section class='flex flex-row items-center space-x-12'>
+
+			<a href='{{ logo_link }}' class='max-w-60'>
+				{% include 'atoms/image.twig' with {
+                'image' : logo_id,
+                'image_classes': 'h-15 w-full' } %}
+			</a>
+
+			<nav>
+				{{ menu|raw}}
+			</nav>
+
+			<div>
+                <input type='checkbox' name='search_toggle' id='search_toggle' class='hidden' />
+                <label for='search_toggle' class='flex items-center gap-2 cursor-pointer'>
+                    {% include 'atoms/icon.twig' with {
+                        'icon'  : 'search',
+                        'color' : 'text-primary',
+                        'size'  : 'text-2xl'
+                        } %}
+                </label>
+
+                {% if buttons %}
+                    {% for button in buttons %}
+                        {% include 'atoms/button.twig' with button %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+		</section>
+
+        <div class='hidden search-form md:absolute w-full bottom-0 right-0 mb-4 '>
+            <div class='container'>
+                <form action='#' method='get' class='flex justify-end'>
+
+                    <fieldset class='flex flex-row gap-4'>
+                        <input type='text' name='q' placeholder='Zoek naar...'/>
+                        <button type='submit'>
+
+                            {% include 'atoms/icon.twig' with {
+                                'icon'  : 'search',
+                                'color' : 'inherit',
+                                'size'  : 'text-2xl'
+                                } %}
+                                Zoek
+
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+	</div>
+
+</header>

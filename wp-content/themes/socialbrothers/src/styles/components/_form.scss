@@ -1,0 +1,18 @@
+.header-nav {
+    &:has(:checked) {
+        .search-form {
+            @apply block;
+        }
+
+    }
+}
+
+form {
+    input[type="text"] {
+        @apply w-full md:min-w-52 p-2 border-2 border-gray-200;
+    }
+
+    input[type="submit"], button[type="submit"] {
+        @apply btn btn--solid;
+    }
+}
