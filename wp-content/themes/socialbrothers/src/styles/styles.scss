@@ -6,19 +6,18 @@
 
 @use "base/buttons";
 
-@use "components/breadcrumbs";
-
 @use "components/swiper";
 
 @use "components/pagination";
 
-@use "components/forms";
+@use "components/main-menu";
 
-@use "components/menu-list";
+@use "components/form";
+
+@use "components/footer-menu";
 
 @use "components/menu-simple";
 
-@use "components/menu-main";
 
 html,
 body {
@@ -41,6 +40,7 @@ body {
 
 * {
   box-sizing: border-box;
+  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -1,6 +1,6 @@
 <?php
 
-$prefix     = 'block_content-image';
+$prefix     = 'block_slider';
 $block_data = [
     'key'    => $prefix,
     'fields' => [
@@ -11,25 +11,6 @@ $block_data = [
             'type'         => 'accordion',
             'open'         => 1,
             'multi_expand' => 1,
-        ],
-        [
-            'key'   => "{$prefix}_sub_title",
-            'label' => __('Subtitel', '_SBB'),
-            'name'  => 'sub_title',
-            'type'  => 'text',
-        ],
-        'text-color' => [
-            'key'   => "{$prefix}_subtitle_color",
-            'label' => __('Tekst kleur subtitel', '_SBB'),
-            'name' => 'subtitle_color',
-            'type' => 'select',
-            'instructions' => __('Selecteer de subtitel kleur', '_SBB'),
-            'choices' => [
-                '' => __('Geen', '_SBB'),
-                'text-black' => __('Zwart', '_SBB'),
-                'text-secondary' => __('Groen', '_SBB'),
-                'text-primary' => __('Oranje', '_SBB'),
-            ],
         ],
         [
             'key'   => "{$prefix}_title",
@@ -51,6 +32,25 @@ $block_data = [
             ],
                 'wrapper' => [
                 'width' => '25%',
+            ],
+        ],
+        [
+            'key'   => "{$prefix}_sub_title",
+            'label' => __('Subtitel', '_SBB'),
+            'name'  => 'sub_title',
+            'type'  => 'text',
+        ],
+        'text-color' => [
+            'key'   => "{$prefix}_subtitle_color",
+            'label' => __('Subtitel tekst kleur', '_SBB'),
+            'name' => 'subtitle_color',
+            'type' => 'select',
+            'instructions' => __('Selecteer de subtitel tekst kleur', '_SBB'),
+            'choices' => [
+                '' => __('Geen', '_SBB'),
+                'text-black' => __('Zwart', '_SBB'),
+                'text-secondary' => __('Groen', '_SBB'),
+                'text-white' => __('Wit', '_SBB'),
             ],
         ],
         [
@@ -141,40 +141,35 @@ $block_data = [
             ],
         ],
         [
-            'key'          => "{$prefix}_image_tab",
-            'label'        => __('Afbeedling', '_SBB'),
-            'name'         => 'image_tab',
+            'key'          => "{$prefix}_slider_tab",
+            'label'        => __('Slider', '_SBB'),
+            'name'         => 'slider_tab',
             'type'         => 'accordion',
             'open'         => 0,
             'multi_expand' => 1,
         ],
         [
-            'key'           => "{$prefix}_image_id",
-            'label'         => __('Afbeelding', '_SBB'),
-            'name'          => 'image_id',
-            'type'          => 'image',
-            'return_format' => 'id',
-        ],
-        [
-            'key'   => "{$prefix}_big",
-            'name'  => 'big',
-            'label' => __('Afbeelding breder', '_SBB'),
-            'type'  => 'true_false',
-            'ui'    => true,
-        ],
-        [
-            'key'     => "{$prefix}_ratio",
-            'name'    => 'ratio',
-            'label'   => __('Afbeelding ratio', '_SBB'),
-            'type'    => 'select',
-            'choices' => [
-                ''                           => __('Vrij', '_SBB'),
-                'aspect-square object-cover' => __('1/1 (vierkant)', '_SBB'),
-                'aspect-video object-cover'  => __('16/9 (video)', '_SBB'),
-                'aspect-4/3 object-cover'    => __('4/3', '_SBB'),
-                'aspect-3/4 object-cover'    => __('3/4', '_SBB'),
+            'key'     => "{$prefix}_slides",
+            'label'   => __('Slides', '_SBB'),
+            'name'    => 'slides',
+            'type'    => 'repeater',
+            'button_label' => __('Nieuwe slide', '_SBB'),
+            'layout'  => 'block',
+            'sub_fields' => [
+                [
+                    'key'     => "{$prefix}_slide_image",
+                    'label'   => __('Afbeelding', '_SBB'),
+                    'name'    => 'image',
+                    'type'    => 'image',
+                    'wrapper' => [
+                        'width' => '50%',
+                    ],
+                ],
+                [
+                    'key'     => "{$prefix}_slide_title",
+                ],
             ],
-        ],
+       ],
     ],
 ];
 

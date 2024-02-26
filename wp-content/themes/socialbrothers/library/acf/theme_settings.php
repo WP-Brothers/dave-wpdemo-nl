@@ -30,6 +30,14 @@ function acf_theme_settings()
                 'mime_types'    => 'svg, png, jpg',
                 'return_format' => 'id',
                 'instructions'  => __('Voeg hier het logo toe', '_SBB'),
+                'wrapper'   => ['width' => 50],
+            ],
+            [
+                'key'     => "{$prefix}_logo_link",
+                'name'    => 'logo_link',
+                'label'   => __('Logo link', '_SBB'),
+                'type'    => 'link',
+                'wrapper'   => ['width' => 50],
             ],
             [
                 'key'       => "{$prefix}_contact_tab",
@@ -68,14 +76,6 @@ function acf_theme_settings()
                 'type'    => 'link',
                 'wrapper' => ['width' => 50],
             ],
-            [
-                'key'       => "{$prefix}_business",
-                'name'      => 'business',
-                'label'     => __('Zakelijk', '_SBB'),
-                'type'      => 'textarea',
-                'new_lines' => 'br',
-            ],
-
             [
                 'key'       => "{$prefix}_socials_tab",
                 'label'     => __('Social Media', '_SBB'),
@@ -117,84 +117,30 @@ function acf_theme_settings()
                     
                 ],
             ],
-
-            [
-                'key'       => "{$prefix}_newsletter_tab",
-                'label'     => __('Nieuwsbrief', '_SBB'),
-                'type'      => 'tab',
-                'placement' => 'left',
-            ],
-            [
-                'key'        => "{$prefix}_newsletter_content",
-                'name'       => 'newsletter',
-                'label'      => __('Nieuwsbrief', '_SBB'),
-                'type'       => 'group',
-                'sub_fields' => [
-                    [
-                        'key'   => "{$prefix}_newsletter_content_sub_title",
-                        'name'  => 'sub_title',
-                        'label' => __('Subtitel', '_SBB'),
-                        'type'  => 'text',
-                    ],
-                    [
-                        'key'   => "{$prefix}_newsletter_content_title",
-                        'name'  => 'title',
-                        'label' => __('Titel', '_SBB'),
-                        'type'  => 'text',
-                    ],
-                    [
-                        'key'          => "{$prefix}_newsletter_content_content",
-                        'name'         => 'content',
-                        'label'        => __('Content', '_SBB'),
-                        'type'         => 'wysiwyg',
-                        'toolbar'      => 'contentcenter',
-                        'tabs'         => 'visual',
-                        'media_upload' => false,
-                    ],
-                ],
-            ],
-
             [
                 'key'       => "{$prefix}_header_tab",
                 'label'     => __('Header', '_SBB'),
                 'type'      => 'tab',
                 'placement' => 'left',
             ],
+           
             [
-                'key'   => "{$prefix}_header_submenu_hover",
-                'label' => __('Menu dropdown hover ipv klik', '_SBB'),
-                'name'  => 'header_submenu_hover',
-                'type'  => 'true_false',
-                'ui'    => true,
-            ],
-            [
-                'key'        => "{$prefix}_header_button",
-                'label'      => __('Knop', '_SBB'),
-                'name'       => 'header_button',
-                'type'       => 'group',
+                'key'        => "{$prefix}_header_meta",
+                'label'      => __('Reclame tekst', '_SBB'),
+                'name'       => 'header_meta',
+                'type'       => 'repeater',
                 'layout'     => 'block',
                 'sub_fields' => [
                     [
-                        'key'     => "{$prefix}_header_button_link",
-                        'name'    => 'link',
-                        'label'   => __('Link', '_SBB'),
-                        'type'    => 'link',
-                        'wrapper' => [
-                            'width' => '50%',
-                        ],
+                        'key'     => "{$prefix}_header_text",
+                        'name'    => 'header_text',
+                        'label'   => __('Tekst boven de navigatie ', '_SBB'),
+                        'type'    => 'wysiwyg',
+                        
                     ],
+                    
                     [
-                        'key'     => "{$prefix}_header_button_type",
-                        'name'    => 'type',
-                        'label'   => __('Stijl', '_SBB'),
-                        'type'    => 'select',
-                        'choices' => wpb_get_button_types(),
-                        'wrapper' => [
-                            'width' => '50%',
-                        ],
-                    ],
-                    [
-                        'key'     => "{$prefix}_header_button_use_icon",
+                        'key'     => "{$prefix}_header_text_use_icon",
                         'name'    => 'use_icon',
                         'label'   => __('Icoon gebruiken?', '_SBB'),
                         'type'    => 'true_false',
@@ -204,17 +150,18 @@ function acf_theme_settings()
                         ],
                     ],
                     [
-                        'key'     => "{$prefix}_header_button_icon",
+                        'key'     => "{$prefix}_header_text_icon",
                         'name'    => 'icon',
                         'label'   => __('Icoon', '_SBB'),
                         'type'    => 'GOOGLE_MATERIAL_ICON',
                         'wrapper' => [
                             'width' => '40%',
                         ],
+                        
                         'conditional_logic' => [
                             [
                                 [
-                                    'field'    => "{$prefix}_header_button_use_icon",
+                                    'field'    => "{$prefix}_header_text_use_icon",
                                     'operator' => '==',
                                     'value'    => 1,
                                 ],
@@ -222,7 +169,7 @@ function acf_theme_settings()
                         ],
                     ],
                     [
-                        'key'     => "{$prefix}_header_button_icon_pos",
+                        'key'     => "{$prefix}_header_text_icon_pos",
                         'name'    => 'icon_pos',
                         'label'   => __('Icoon Rechts?', '_SBB'),
                         'type'    => 'true_false',
@@ -233,7 +180,7 @@ function acf_theme_settings()
                         'conditional_logic' => [
                             [
                                 [
-                                    'field'    => "{$prefix}_header_button_use_icon",
+                                    'field'    => "{$prefix}_header_text_use_icon",
                                     'operator' => '==',
                                     'value'    => 1,
                                 ],
@@ -242,6 +189,65 @@ function acf_theme_settings()
                     ],
                 ],
             ],
+            [
+                'key'        => "{$prefix}_header_meta_links",
+                'label'      => __('Handige navigatie links', '_SBB'),
+                'name'       => 'header_meta_links',
+                'type'       => 'repeater',
+                'layout'     => 'block',
+                'sub_fields' => [
+                    [
+                        'key'   => "{$prefix}_header_links",
+                        'label' => __('Belangrijke links', '_SBB'),
+                        'name'  => 'header_links',
+                        'type'  => 'link',
+                    ],
+                ],
+            ],
+            [
+                'key'          => "{$prefix}_header_buttons",
+                'label'        => __('Knoppen', '_SBB'),
+                'name'         => 'header_buttons',
+                'label'        => __('Nieuwe knoppen', '_SBB'),
+                'type'         => 'repeater',
+                'max'          => 2,
+                'layout'       => 'block',
+                'collapsed'    => "{$prefix}_buttons_link",
+                'sub_fields'   => [
+                    [
+                        'key'     => "{$prefix}_buttons_link",
+                        'name'    => 'link',
+                        'label'   => __('Link', '_SBB'),
+                        'type'    => 'link',
+                        'wrapper' => [
+                            'width' => '50%',
+                        ],
+                    ],
+                    [
+                        'key'     => "{$prefix}_buttons_type",
+                        'name'    => 'type',
+                        'label'   => __('Stijl', '_SBB'),
+                        'type'    => 'select',
+                        'choices' => wpb_get_button_types(),
+                        'wrapper' => [
+                            'width' => '50%',
+                        ],
+                    ],
+                ],
+            ],
+
+            //  [
+            //         'key'     => "{$prefix}_repeater_box_link_type",
+            //         'name'    => 'box_link_type',
+            //         'label'   => __('Taal', '_SBB'),
+            //         'type'    => 'select',
+            //         'choices' => [
+            //             'NL' => __('Nederlands', '_SBB'),
+            //             'EN' => __('Engels', '_SBB'),
+            //         ],
+            //         'wrapper' => ['width' => 33],
+                    
+            //     ],
 
             [
                 'key'       => "{$prefix}_footer_tab",
@@ -258,22 +264,6 @@ function acf_theme_settings()
                 'tabs'         => 'visual',
                 'media_upload' => false,
             ],
-
-            [
-                'key'       => "{$prefix}_search_tab",
-                'label'     => __('Zoekpagina', '_SBB'),
-                'type'      => 'tab',
-                'placement' => 'left',
-            ],
-
-            [
-                'key'           => "{$prefix}_search_page_title",
-                'name'          => 'search_page_title',
-                'label'         => __('Titel', '_SBB'),
-                'type'          => 'text',
-                'default_value' => __('Zoek op onderwerp', '_SBF'),
-            ],
-
             [
                 'key'       => "{$prefix}_404_tab",
                 'label'     => __('404', '_SBB'),
