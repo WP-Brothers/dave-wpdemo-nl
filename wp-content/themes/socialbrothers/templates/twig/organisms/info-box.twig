@@ -11,10 +11,10 @@
 
 				{% if info_box.box_icon %}
 					{% include 'atoms/icon.twig' with {
-					'icon': info_box.box_icon,
-					'size': info_box.box_icon_size,
-					'color': icon_color,
-					'align': 'right'
+						icon	: info_box.box_icon,
+						size	: info_box.box_icon_size,
+						color	: icon_color,
+						align	: 'right'
 					} %}
 				{% endif %}
 
@@ -27,11 +27,11 @@
 				{% if info_box.box_link %}
 				
 					{% include 'atoms/button.twig' with {
-						title	: info_box.box_link.title,
-						url		: info_box.box_link.url,
-						type	: info_box.box_link_type,
-						additional_classes: 'w-fit',
-						icon	: info_box.box_link_icon
+						title				: info_box.box_link.title,
+						url					: info_box.box_link.url,
+						type				: info_box.box_link_type,
+						additional_classes	: 'w-fit',
+						icon				: info_box.box_link_icon
 					} %}
 
 				{% endif %}
