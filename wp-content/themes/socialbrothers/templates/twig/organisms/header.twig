@@ -30,8 +30,8 @@
 
 				<form action='#' method='get'>
 					<select name='language' id='language'>
-						<option value='NL'>Nederlands</option>
-						<option value='EN'>Engels</option>
+						<option value='NL'>{{ 'Nederlands'|translatable }}</option>
+						<option value='EN'>{{ 'Engels'|translatable }}</option>
 					</select>
 				</form</div>
 
@@ -77,11 +77,10 @@
 				<div class='flex md:hidden'>
 					<input type='checkbox' name='menu_toggle' id='menu_toggle' class='hidden'/>
 					<label for='menu_toggle' class='flex items-center gap-2 cursor-pointer'>
-
 						{% include 'atoms/icon.twig' with {
-						icon  : 'menu',
-						color : 'text-primary',
-						size  : 'text-4xl'
+							icon  : 'menu',
+							color : 'text-primary',
+							size  : 'text-4xl'
 						} %}
 					</label>
 
@@ -90,17 +89,16 @@
 				<div class='hidden search-form w-full mb-10 '>
 					<form action='#' method='get' class='flex justify-end bg-white'>
 						<div class='container relative'>
-
 							<fieldset class='flex flex-row gap-4 md:absolute -bottom-110 right-0'>
-								<input type='text' name='q' placeholder='Zoek naar...'/>
+								<input type='text' name='q' placeholder='{{ 'Zoek naar...'|translatable }}'/>
 								<button type='submit'>
 
 									{% include 'atoms/icon.twig' with {
-                                icon  : 'search',
-                                color : 'inherit',
-                                size  : 'text-2xl'
-                                } %}
-									Zoek
+										icon  : 'search',
+										color : 'inherit',
+										size  : 'text-2xl'
+										} %}
+									{{ 'Zoek'|translatable }}
 								</button>
 							</fieldset>
 						</div>
