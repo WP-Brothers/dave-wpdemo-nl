@@ -1,9 +1,9 @@
 {
-  "name": "acf/Slider",
-  "title": "Afbeeliding slider",
+  "name": "acf/cta",
+  "title": "Oproep voor actie",
   "category": "sections",
-  "icon": "columns",
-  "keywords": ["image", "slider", "cta"],
+  "icon": "comment-content",
+  "keywords": ["actie", "cta", "doen", "knop", "oproep"],
   "acf": {
       "mode": "preview"
   },
