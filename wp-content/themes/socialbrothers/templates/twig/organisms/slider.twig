@@ -1,0 +1,55 @@
+{% set content_block = {
+    title: title,
+    title_size: title_size,
+    sub_title: sub_title,
+    subtitle_color: subtitle_color,
+    content: content,
+    buttons: buttons
+} %}
+
+{% set category_type = type == 'fill' ? 'bg-secondary text-white' : 'border-2 border-secondary bg-white' %}
+
+<div class='container'>
+	<div class='flex flex-col md:flex-row items-start p-2 space-y-8 md:space-y-0'>
+
+		<section class='flex flex-col w-full space-y-4 md:w-2/5'>
+			<div class='md:w-64'>
+				{% include 'modules/content.twig' with content_block %}
+			</div>
+		</section>
+
+		<section class='w-full md:w-3/5'>
+			<div class='slider'>
+				<div class='swiper'>
+					<div class='swiper-wrapper'>
+						{% for slide in slides %}
+							<div class='swiper-slide'>
+								{% set category_type = slide.type == 'fill' ? 'bg-secondary text-white' : 'bg-white border-2 border-secondary text-black' %}
+								{% set slide_data = {
+									image_id    : slide.image_id,
+									date        : slide.date,
+									title     	: slide.title,
+									style       : category_type,
+									category    : slide.category,
+								}%}
+								{% include 'modules/slide.twig' with slide_data %}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+
+				<div class='flex flex-col md:flex-row mt-4 gap-8 justify-between md:items-center'>
+					<div class='swiper-pagination'>
+						<div class='w-4 h-4 rounded-full bg-primary-light'></div>
+					</div>
+
+					<div class='flex items-center space-x-8'>
+						<div class='swiper-button-prev'></div>
+						<div class='swiper-button-next'></div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+	</div>
+</div>

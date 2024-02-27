@@ -16,15 +16,7 @@ const scriptsInit = () => {
       )
     );
   }
-
-  const headers = document.querySelectorAll('#header');
-  if (headers.length) {
-    headers?.forEach((header) =>
-      import('./scripts/header').then((module) =>
-        module.default(header as HTMLElement)
-      )
-    );
-  }
+  
   const menuMains = document.querySelectorAll(
     '.menu-main:not(.menu-main--hover)'
   );

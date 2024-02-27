@@ -12,6 +12,7 @@ const swiperInit = (slider: HTMLElement) => {
       spaceBetween: 16,
       slidesPerView: 1,
       loop: true,
+      direction: 'horizontal',
       slideActiveClass: 'swiper-slide--active',
 
       pagination: {
@@ -27,6 +28,10 @@ const swiperInit = (slider: HTMLElement) => {
         768: {
           slidesPerView: 1.7,
           spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 2.5, 
+          spaceBetween: 24,   
         },
       },
     };
