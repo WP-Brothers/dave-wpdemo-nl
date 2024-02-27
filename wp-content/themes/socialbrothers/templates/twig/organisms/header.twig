@@ -41,12 +41,30 @@
 
 				<a href='{{ logo_link }}' class='max-w-60 mr-6'>
 					{% include 'atoms/image.twig' with {
-                image           : logo_id,
-                image_classes   : 'h-18 w-full' } %}
+			image           : logo_id,
+			image_classes   : 'h-18 w-full' } %}
 				</a>
 
-				<nav class=' hidden md:block'>
-					{{ menu|raw}}
+				<nav class='md:flex flex-col menu_container hidden absolute md:relative md:left-0 md:top-0 left-1/2 top-20 w-screen md:w-full bg-white md:bg-none -translate-x-1/2 md:translate-x-0'>
+					<div class='container'>
+						{{ menu|raw}}
+
+						<div class='md:hidden md:absolute top-20 search-form w-full mb-10 md:m-0  '>
+							<form action='#' method='get' class='flex justify-end bg-white'>
+									<fieldset class='flex flex-row gap-4'>
+										<input type='text' name='search_field' class='w-full md:min-w-52 p-2 border-2 border-gray-200' placeholder='{{ 'Zoek naar...'|translatable }}'/>
+										<button type='submit' class='btn'>
+											{% include 'atoms/icon.twig' with {
+											icon  : 'search',
+											color : 'inherit',
+											size  : 'text-2xl'
+											} %}
+											{{ 'Zoek'|translatable }}
+										</button>
+									</fieldset>
+							</form>
+						</div>
+					</div>
 				</nav>
 
 				<div class='flex flex-row items-center space-x-8'>
@@ -55,55 +73,40 @@
 						<input type='checkbox' name='search_toggle' id='search_toggle' class='hidden'/>
 						<label for='search_toggle' class='flex items-center gap-2 cursor-pointer'>
 							{% include 'atoms/icon.twig' with {
-							icon  : 'search',
-							color : 'text-primary',
-							size  : 'text-2xl'
-							} %}
+						icon  : 'search',
+						color : 'text-primary',
+						size  : 'text-2xl'
+						} %}
 						</label>
 					</div>
 
 					{% if buttons %}
 						{% for button in buttons %}
 							{% include 'atoms/button.twig' with {
-                            url     : button.link.url,
-                            title   : button.link.title,
-                            type    : button.type,
-                            target  : button.link.target,
-                        } %}
+						url     : button.link.url,
+						title   : button.link.title,
+						type    : button.type,
+						target  : button.link.target,
+					} %}
 						{% endfor %}
 					{% endif %}
 				</div>
 
 				<div class='flex md:hidden'>
-					<input type='checkbox' name='menu_toggle' id='menu_toggle' class='hidden'/>
-					<label for='menu_toggle' class='flex items-center gap-2 cursor-pointer'>
+					{# <input type='checkbox' name='menu_toggle' id='menu_toggle' class='hidden menu_toggle'/>
+					<label for='menu_toggle' class='flex items-center gap-2 cursor-pointer'> #}
+
+					<button class='menu_toggle'>
 						{% include 'atoms/icon.twig' with {
-							icon  : 'menu',
-							color : 'text-primary',
-							size  : 'text-4xl'
-						} %}
-					</label>
-
-				</section>
-
-				<div class='hidden search-form w-full mb-10 '>
-					<form action='#' method='get' class='flex justify-end bg-white'>
-						<div class='container relative'>
-							<fieldset class='flex flex-row gap-4 md:absolute -bottom-110 right-0'>
-								<input type='text' name='q' placeholder='{{ 'Zoek naar...'|translatable }}'/>
-								<button type='submit'>
-
-									{% include 'atoms/icon.twig' with {
-										icon  : 'search',
-										color : 'inherit',
-										size  : 'text-2xl'
-										} %}
-									{{ 'Zoek'|translatable }}
-								</button>
-							</fieldset>
-						</div>
-					</form>
+						icon  : 'menu',
+						color : 'text-primary',
+						size  : 'text-4xl'
+					} %}
+					</button>
+					{# </label> #}
 				</div>
-			</div>
+			</section>
 
-		</header>
+
+		</div>
+	</header>

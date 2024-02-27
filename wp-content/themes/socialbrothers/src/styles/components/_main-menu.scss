@@ -1,12 +1,12 @@
 .menu-main {
     
-    @apply flex flex-wrap gap-4 z-50 w-max;  
+    @apply flex flex-col md:flex-row gap-4  md:w-max;  
     
     li {
         @apply p-4;
 
         &.current-menu__item {
-            @apply border-b-2 border-primary-dark text-primary-dark;
+            @apply border-b-2 border-primary-dark text-primary-dark w-full md:w-fit;
         }
 
         &:hover {
@@ -18,7 +18,7 @@
         }
 
         &:has(.submenu) {
-            @apply relative flex flex-row-reverse items-center justify-between;
+            @apply relative md:flex md:flex-row-reverse items-center justify-between;
 
             &:hover {
                 .submenu {
@@ -26,15 +26,31 @@
                 }
             }
 
-            &::before {
-                    @apply content-["\e5cc"] font-iconRound rotate-90 flex text-primary text-3xl leading-4;
-                }
+           > a{
+                @apply flex leading-4;
+                &::after {
+                        @apply content-["\e5cc"] font-iconRound rotate-90 flex text-primary text-3xl leading-4;
+                    }
+            }
+
         }
     }
 }
 
+.menu_container {
+  @apply z-50;
+
+    &::after {
+        @apply content-[""] fixed -bottom-52 left-0 opacity-40 bg-black h-52 w-screen md:hidden;
+    }
+}
+
+.header-nav:has(input:checked) {
+    @apply h-60;
+}
+
 .submenu {
-    @apply hidden absolute top-full left-0 z-10 bg-white shadow-xl ;
+    @apply hidden md:absolute top-full left-0 md:z-10 bg-white md:shadow-xl w-full md:w-fit ;
 
     li {
         @apply w-80;
