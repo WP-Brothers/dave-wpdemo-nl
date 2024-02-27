@@ -27,6 +27,18 @@ const scriptsInit = () => {
       )
     );
   }
+
+    const menu = document.querySelector('.menu_container');
+    const menuToggle = document.querySelector('.menu_toggle');
+  
+    if (menu && menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden');
+      });
+    }
+  
 };
+
 
 export default scriptsInit;
