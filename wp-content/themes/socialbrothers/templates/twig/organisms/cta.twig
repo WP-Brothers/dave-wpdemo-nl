@@ -1,31 +1,26 @@
 {% set text_color = wrapper_background == 'bg-white' ? 'text-black' : 'text-white' %}
 
+{% set content_block = {
+    title: title,
+    title_size: title_size,
+    sub_title: sub_title,
+    subtitle_color: subtitle_color,
+    content: content,
+    buttons: buttons
+} %}
+
 <section class='w-screen p-2 py-10 md:p-10 md:py-14'>
-    <div class='flex flex-col items-start md:flex-row-reverse gap-16 mx-auto justify-center p-6 lg:p-14 rounded-xl {{ wrapper_background }} container'>
-        
-		<div class='flex flex-col md:w-2/3 w-full ml-3 {{ text_color }}'>
-			{% if sub_title != '' %}
-                <p class="{{ subtitle_color|default('text-black')}} font-semibold my-1">{{ sub_title }}</p>
-			{% endif %}
+    <div class='container'>
+        <div class='flex flex-col items-start md:flex-row-reverse gap-16 mx-auto justify-center p-6 lg:p-14 rounded-xl {{ wrapper_background }}'>
+            
+            <section class='flex flex-col md:w-2/3 w-full ml-3 {{ text_color }}'>
+                {% include 'modules/content.twig' with content_block %}
+            </section>
 
-			{% if title != '' %}
-                <h2 class= '{{ title_size}} my-4'>{{ title }}</h2>
-			{% endif %}
+            <figure>
+                {% include 'atoms/image.twig' with {'image' : image_id} %}
+            </figure>
 
-			{% include 'atoms/text.twig' with {'text': content|raw} %}
-
-			<div class='flex gap-5 mt-4'>
-				{% if buttons %}
-					{% for button in buttons %}
-						{% include 'atoms/button.twig' with button %}
-					{% endfor %}
-				{% endif %}
-			</div>
-		</div>
-
-		<figure>
-			{% include 'atoms/image.twig' with {'image' : image_id} %}
-		</figure>
-
+        </div>
 	</div>
 </section>
