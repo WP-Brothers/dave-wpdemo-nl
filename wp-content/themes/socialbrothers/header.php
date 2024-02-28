@@ -18,6 +18,7 @@ if (get_field('header_submenu_hover', 'options')) {
  *
  * @noinspection PhpUnhandledExceptionInspection
  */
+
 Twig::render(
     'header.twig',
     Theme::filter('header_context', [
@@ -26,7 +27,9 @@ Twig::render(
         'header'              => [
             'menu'    => wpb_menu('primary', 2, $menu_classes),
             'logo_id' => get_field('logo', 'options'),
-            'button'  => wpb_build_button_context(get_field('header_button', 'options') ?? []),
+            'header_meta' => get_field('header_meta', 'options') ?? '',
+            'header_links' => get_field('header_meta_links', 'options') ?? '',
+            'buttons'  => get_field('header_buttons', 'options'),
         ],
     ])
 );

@@ -1,0 +1,19 @@
+{% set content_block = {
+    title: hero_title,
+    title_size: hero_title_size,
+    subtitle_color: subtitle_color,
+    content: hero_content,
+    buttons: buttons
+} %}
+
+<section class='w-screen p-2 py-10 md:p-10 md:py-20'>
+	<div class='flex flex-col items-center md:flex-row gap-10 mx-auto justify-center container'>
+		<section class='flex flex-col md:w-1/2 w-full space-y-8'>
+			{% include 'modules/content.twig' with content_block %}
+		</section>
+
+		<figure>
+			{% include 'atoms/image.twig' with {'image' : image_id} %}
+		</figure>
+	</div>
+</section>

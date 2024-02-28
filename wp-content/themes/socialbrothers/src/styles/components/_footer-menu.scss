@@ -1,0 +1,21 @@
+.menu-list {
+    @apply flex flex-col gap-2;
+
+    li {
+        @apply p-2 flex items-center;
+
+            &::before {
+                @apply content-["\e5cc"] font-iconRound flex justify-start text-primary text-3xl  ml-4;
+            }
+
+        &:hover {
+            a {
+                @apply underline;
+            }
+        }
+
+        a {
+            @apply  no-underline hover:underline h-4 leading-4;
+        }
+    }
+}

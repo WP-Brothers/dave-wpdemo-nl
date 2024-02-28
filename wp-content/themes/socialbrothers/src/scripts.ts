@@ -16,15 +16,7 @@ const scriptsInit = () => {
       )
     );
   }
-
-  const headers = document.querySelectorAll('#header');
-  if (headers.length) {
-    headers?.forEach((header) =>
-      import('./scripts/header').then((module) =>
-        module.default(header as HTMLElement)
-      )
-    );
-  }
+  
   const menuMains = document.querySelectorAll(
     '.menu-main:not(.menu-main--hover)'
   );
@@ -35,6 +27,18 @@ const scriptsInit = () => {
       )
     );
   }
+
+    const menu = document.querySelector('.menu_container');
+    const menuToggle = document.querySelector('.menu_toggle');
+  
+    if (menu && menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden');
+      });
+    }
+  
 };
+
 
 export default scriptsInit;

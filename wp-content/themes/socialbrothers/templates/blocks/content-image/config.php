@@ -18,11 +18,40 @@ $block_data = [
             'name'  => 'sub_title',
             'type'  => 'text',
         ],
+        'text-color' => [
+            'key'   => "{$prefix}_subtitle_color",
+            'label' => __('Tekst kleur subtitel', '_SBB'),
+            'name' => 'subtitle_color',
+            'type' => 'select',
+            'instructions' => __('Selecteer de subtitel kleur', '_SBB'),
+            'choices' => [
+                '' => __('Geen', '_SBB'),
+                'text-black' => __('Zwart', '_SBB'),
+                'text-secondary' => __('Groen', '_SBB'),
+                'text-primary' => __('Oranje', '_SBB'),
+            ],
+        ],
         [
             'key'   => "{$prefix}_title",
             'label' => __('Titel', '_SBB'),
             'name'  => 'title',
             'type'  => 'text',
+        ],
+        'font-size' => [
+            'key'   => "{$prefix}_title_size",
+            'label' => __('Titel formaat', '_SBB'),
+            'name' => 'title_size',
+            'type' => 'select',
+            'instructions' => __('Selecteer het gewenste titel formaat', '_SBB'),
+            'choices' => [
+                'text-2xl' => __('Klein', '_SBB'),
+                'text-3xl' => __('Normaal', '_SBB'),
+                'text-4xl' => __('Groot', '_SBB'),
+                'text-5xl' => __('Extra groot', '_SBB'),
+            ],
+                'wrapper' => [
+                'width' => '25%',
+            ],
         ],
         [
             'key'          => "{$prefix}_content",
@@ -37,7 +66,7 @@ $block_data = [
             'key'          => "{$prefix}_buttons",
             'label'        => __('Knoppen', '_SBB'),
             'name'         => 'buttons',
-            'button_label' => __('Nieuwe Button', '_SBB'),
+            'button_label' => __('Nieuwe knop', '_SBB'),
             'type'         => 'repeater',
             'max'          => 2,
             'layout'       => 'block',
@@ -93,7 +122,7 @@ $block_data = [
                 [
                     'key'     => "{$prefix}_buttons_icon_pos",
                     'name'    => 'icon_pos',
-                    'label'   => __('Icoon Rechts?', '_SBB'),
+                    'label'   => __('Icoon rechts?', '_SBB'),
                     'type'    => 'true_false',
                     'ui'      => true,
                     'wrapper' => [
@@ -129,7 +158,7 @@ $block_data = [
         [
             'key'   => "{$prefix}_big",
             'name'  => 'big',
-            'label' => __('afbeelding breeder', '_SBB'),
+            'label' => __('Afbeelding breder', '_SBB'),
             'type'  => 'true_false',
             'ui'    => true,
         ],
@@ -141,7 +170,7 @@ $block_data = [
             'choices' => [
                 ''                           => __('Vrij', '_SBB'),
                 'aspect-square object-cover' => __('1/1 (vierkant)', '_SBB'),
-                'aspect-video object-cover'  => __('16/9(video)', '_SBB'),
+                'aspect-video object-cover'  => __('16/9 (video)', '_SBB'),
                 'aspect-4/3 object-cover'    => __('4/3', '_SBB'),
                 'aspect-3/4 object-cover'    => __('3/4', '_SBB'),
             ],

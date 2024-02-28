@@ -1,12 +1,20 @@
-<section id="{{ anchor }}" class="{{ class_name }}" style="{{ style|raw }}">
-    <div class="{{ container|default('container') }}">
-        <div class="flex flex-wrap md:flex-nowrap gap-4 md:gap-6 {{ layout.align.flex }} {{ layout.justify.flex }} {{ orientation }}">
-            <div class="w-full md:w-1/2 xl:w-5/12 xl:mr-[8.3333333%]">
-                {% include 'molecules/content.twig' %}
-            </div>
-            <div class="w-full md:w-1/2 {{ big ? '' : 'xl:w-5/12 xl:mr-[8.3333333%]' }}">
-                {% include 'atoms/image.twig' %}
-            </div>
-        </div>
-    </div>
+{% set content_block = {
+    title: title,
+    title_size: title_size,
+    sub_title: sub_title,
+    subtitle_color: subtitle_color,
+    content: content,
+    buttons: buttons
+} %}
+
+<section class='w-screen p-2 py-10 md:p-10 md:py-14'>
+	<div class='flex flex-col items-center md:flex-row-reverse gap-5 mx-auto justify-center container'>
+		<section class='flex flex-col md:w-1/2 w-full space-y-4'>
+			{% include 'modules/content.twig' with content_block %}
+		</section>
+
+		<figure>
+			{% include 'atoms/image.twig' with {'image' : image_id} %}
+		</figure>
+	</div>
 </section>

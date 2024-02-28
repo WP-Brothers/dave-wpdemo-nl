@@ -1,36 +1,39 @@
-<footer class="bg-secondary-light">
-    <div class="container">
-        <div class="py-10 md:py-20">
-            <div class="grid md:grid-cols-4 lg:grid-cols-12 gap-6">
-                <div class="md:col-span-2 lg:col-span-5">
-                    <div class="grid gap-4">
-                        {% include 'molecules/content.twig' with {content_lead: true} %}
-                        {% if phone %}
-                            {% include "atoms/big-link.twig" with {title: phone, url: 'tel:' ~ phone} %}
-                        {% endif %}
-                        {% if email %}
-                            {% include "atoms/big-link.twig" with {title: email, url: 'mailto:' ~ email} %}
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="lg:col-start-7 lg:col-span-3">
-                    {{ menu1|raw }}
-                </div>
+<footer class='bg-secondary-light p-2 py-10 md:p-10 md:pt-14 md:pb-5'>
+	<div class='container flex flex-col gap-y-6'>
 
-                <div class="lg:col-span-3">
-                    {{ menu2|raw }}
-                </div>
+		<section class='flex flex-col md:flex-row'>
+			<div class='md:w-1/2'>
+				<div class=' w-full md:w-96'>
+					{% include 'atoms/text.twig' with {'text': content|raw} %}
+				</div>
+
+				<div class='flex flex-col font-semibold text-4xl gap-6 my-6'>
+                    <a href='tel:{{ phone_link }}' class='hover:underline'>{{ phone }}</a>
+                    <a href='mailto:{{ email }}' class='hover:underline'>{{ email }}</a>
+				</div>
+			</div>
+
+			<div class='flex flex-col md:flex-row justify-around items-start w-1/2 space-y-4 md:space-y-0'>
+				{{ menu1|raw }}
+				{{ menu2|raw }}
+            <div>
+        </section>
+
+        <div class='flex flex-col md:flex-row items-start md:items-centerr justify-between mt-10 text-left'>
+            {{ menu_bottom|raw }}
+
+            <div class='flex items-center justify-center space-x-6 mt-6 md:mt-0'>
+                {% if socials %}
+                    {% for social in socials %}
+                        <a href='{{ social.socials_platform.url }}' class='text-2xl'>
+                            {% if social.socials_icon %}
+                                {% include 'atoms/company-icons/'~ social.socials_icon ~'.twig'%}
+                            {% endif %}
+                        </a>
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
-        <div class="py-4 md:pb-6">
-            <div class="flex gap-4 flex-col md:flex-row md:justify-between flex-wrap md:items-center">
-                <div>
-                    {{ menu_bottom|raw }}
-                </div>
-                <div class="text-neutral-75">
-                    {% include "molecules/follow-icons.twig" %}
-                </div>
-            </div>
-        </div>
+        
     </div>
 </footer>
