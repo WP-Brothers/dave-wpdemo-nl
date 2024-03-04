@@ -18,6 +18,19 @@
 
 @use "components/menu-simple";
 
+@use "./woocommerce/wc-form";
+
+@use "./woocommerce/wc-single-product";
+
+@use "./woocommerce/wc-product-card";
+
+@use "./woocommerce/partials/wc-product-meta";
+
+@use "./woocommerce/partials/wc-typography";
+
+@use "./woocommerce/partials/wc-container";
+
+
 
 html,
 body {

@@ -1,0 +1,13 @@
+form {
+    &.variations_form {
+        @apply flex flex-col;
+
+
+        .variations {
+            @apply text-left w-full;
+
+            tr {
+                @apply grid my-2;
+            }
+        }
+    }}
