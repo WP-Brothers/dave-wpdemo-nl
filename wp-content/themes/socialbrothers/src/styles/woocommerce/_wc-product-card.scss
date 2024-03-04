@@ -1,0 +1,48 @@
+.overview {
+
+    li {
+        @apply grid gap-6 border border-gray-200 rounded-s mb-10 w-56;
+
+        &:hover {
+            @apply text-primary-dark;
+        }
+       
+        &.active {
+            @apply border-b-2 border-primary-dark text-primary-dark -mb-0.5;
+        }
+
+        .attachment-woocommerce_thumbnail {
+            @apply aspect-4/3 object-cover object-center rounded-lg w-full;
+        }
+
+        .product-card {
+
+            .woocommerce-loop-product__title {
+                @apply title title__small-medium;
+            }
+
+            &__content {
+                @apply p-4;
+            }
+
+            &__price {
+                p {
+                    @apply mb-0;
+
+                }
+            }
+
+            &__button {
+                span {
+                    @apply flex justify-between w-full;
+              
+                    &::after {
+                      @apply content-["\e8cc"] font-iconRound text-2xl font-thin text-white leading-4 ml-4;
+                    }
+                  }
+            }
+        }
+    }
+
+
+}

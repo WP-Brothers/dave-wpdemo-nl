@@ -1,0 +1,39 @@
+.product_meta {
+    @apply flex items-center gap-4;
+    &__categories {
+       
+    }
+
+    .posted_in {
+        @apply flex items-center;
+
+        &::before {
+            @apply content-['\e2c7'] font-iconRound text-secondary text-lg mr-2 ;
+        }
+    }
+
+    .tagged_as {
+        @apply bg-secondary text-sm text-white py-1 px-4 rounded-xl w-fit;
+
+        a {
+
+            &::before {
+                @apply content-['\ef55'] font-iconRound text-lg mr-2 mb-0;
+            }
+        }
+    }
+}
+
+.price {
+    @apply flex flex-row-reverse items-end gap-4 justify-end mb-4;
+
+    span {
+        @apply text-2xl font-semibold ;
+    }
+
+    del[aria-hidden=true] span {
+        @apply text-gray-400 text-sm;
+    }
+
+}
+

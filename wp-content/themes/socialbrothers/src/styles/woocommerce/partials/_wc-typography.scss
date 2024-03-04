@@ -1,0 +1,19 @@
+.title {
+    @apply font-bold;
+
+    &__groot {
+        @apply text-3xl;
+    }
+
+    &__medium {
+        @apply text-2xl;
+    }
+
+    &__small-medium {
+        @apply text-xl;
+    }
+
+    &__small {
+        @apply text-lg;
+    }
+}

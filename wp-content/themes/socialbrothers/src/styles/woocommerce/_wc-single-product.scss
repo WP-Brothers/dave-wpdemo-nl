@@ -1,0 +1,68 @@
+.woocommerce-product-gallery {
+  @apply flex justify-center;
+
+
+  &__wrapper {
+    img {
+      height: revert-layer;
+      @apply rounded-lg;
+    }
+  }
+}
+
+.product_container {
+  @apply container;
+
+  .single_product_card {
+    @apply flex flex-col md:flex-row gap-y-10 space-x-32 container;
+
+    .wp-post-image {
+      @apply aspect-square object-cover;
+    }
+  }
+
+  .entry-summary {
+    @apply md:basis-2/5 m-0 space-x-0;
+
+    .price {
+      @apply border-b border-gray-400 pb-4 mb-4;
+    }
+  }
+}
+
+.cart, .variations_button  {
+  @apply flex items-center gap-4;
+
+  .single_add_to_cart_button {
+    @apply w-full font-thin ;
+
+    span {
+      @apply flex justify-between w-full;
+
+      &::after {
+        @apply content-["\e8cc"] font-iconRound text-2xl text-white leading-4 mr-4;
+      }
+    }
+  }
+}
+.thumbnails-wrapper {
+  @apply flex my-4 gap-4;
+}
+
+.woocommerce-product-details__short-description {
+  p {
+    @apply relative overflow-hidden pr-4 max-h-[calc(1.5rem*3)];
+
+    &::after {
+      @apply absolute right-16 bottom-0 content-['..'];
+    }
+  }
+
+  a {
+    @apply text-primary uppercase font-semibold flex items-center;
+
+    &::before {
+      @apply content-['\e5db'] font-iconRound text-lg mr-2;
+    }
+  }
+}

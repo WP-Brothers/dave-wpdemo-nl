@@ -235,20 +235,6 @@ function acf_theme_settings()
                     ],
                 ],
             ],
-
-            //  [
-            //         'key'     => "{$prefix}_repeater_box_link_type",
-            //         'name'    => 'box_link_type',
-            //         'label'   => __('Taal', '_SBB'),
-            //         'type'    => 'select',
-            //         'choices' => [
-            //             'NL' => __('Nederlands', '_SBB'),
-            //             'EN' => __('Engels', '_SBB'),
-            //         ],
-            //         'wrapper' => ['width' => 33],
-                    
-            //     ],
-
             [
                 'key'       => "{$prefix}_footer_tab",
                 'label'     => __('Footer', '_SBB'),
