@@ -24,7 +24,7 @@ global $product;
 
 <?php if ( $price_html = $product->get_price_html() ) : ?>
 	<div class="product-card__price">
-		<p>Vanaf:</p>
+		<p><?php _e('Vanaf:', '_SBF'); ?></p>
 		<span class="price"><?php echo $price_html; ?></span>
 	</div>
 	
