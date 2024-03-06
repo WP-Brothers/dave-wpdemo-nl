@@ -27,3 +27,11 @@ function wpb_product_meta_category()
 
     <?php endif;
 }
+
+add_action('woocommerce_before_shop_loop', function() {
+    wpb_add_container("section", true, "filter_panel");
+}, 19);
+
+add_action('woocommerce_before_shop_loop', function() {
+    wpb_add_container("section", false);
+}, 31);
