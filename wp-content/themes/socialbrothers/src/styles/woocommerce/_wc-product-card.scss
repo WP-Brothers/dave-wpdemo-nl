@@ -1,7 +1,9 @@
 .overview {
 
+      
+
     li {
-        @apply grid gap-6 border border-gray-200 rounded-s mb-10 w-56;
+        @apply grid gap-6 border border-gray-200 rounded-s mb-10 md:w-56 relative;
 
         &:hover {
             @apply text-primary-dark;

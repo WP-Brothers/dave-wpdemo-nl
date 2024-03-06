@@ -1,28 +1,35 @@
 .product_meta {
     @apply flex items-center gap-4;
-    &__categories {
-       
-    }
 
-    .posted_in {
-        @apply flex items-center;
-
-        &::before {
-            @apply content-['\e2c7'] font-iconRound text-secondary text-lg mr-2 ;
-        }
-    }
-
-    .tagged_as {
-        @apply bg-secondary text-sm text-white py-1 px-4 rounded-xl w-fit;
-
-        a {
-
-            &::before {
-                @apply content-['\ef55'] font-iconRound text-lg mr-2 mb-0;
-            }
+    a {
+        &::first-letter {
+            @apply uppercase;
         }
     }
 }
+
+.posted_in {
+    @apply flex items-center;
+
+    &::before {
+        @apply content-['\e2c7'] font-iconRound text-secondary text-lg mr-2 ;
+    }
+}
+
+.tagged_as {
+    @apply bg-secondary text-sm text-white py-0.5 px-3 rounded-full w-fit;
+
+    &.product-card__meta_tag {
+        @apply absolute top-4 left-4 z-10;
+    }
+
+    a:last-child {
+        @apply flex items-center;
+        &::before {
+            @apply content-['\ef55'] font-iconRound text-lg mr-2 mb-0;
+        }
+    }
+}   
 
 .price {
     @apply flex flex-row-reverse items-end gap-4 justify-end mb-4;
