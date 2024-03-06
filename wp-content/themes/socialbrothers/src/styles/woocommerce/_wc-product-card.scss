@@ -18,13 +18,14 @@
         }
 
         .product-card {
+            @apply flex flex-col h-full;
 
             .woocommerce-loop-product__title {
                 @apply title title__small-medium;
             }
 
             &__content {
-                @apply p-4;
+                @apply flex flex-col justify-between h-full p-4;
             }
 
             &__price {

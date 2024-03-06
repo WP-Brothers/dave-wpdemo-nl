@@ -21,7 +21,7 @@ function wpb_product_meta_category()
     if ( ! empty( $product_cats ) ) : ?>
         <div class="product_meta">
             <span class="posted_in">
-                <?php echo $product_cats ?>
+                <?= $product_cats ?>
             </span>
         </div>
 
