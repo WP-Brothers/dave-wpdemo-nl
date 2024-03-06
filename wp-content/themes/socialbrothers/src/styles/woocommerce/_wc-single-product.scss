@@ -14,7 +14,7 @@
   @apply container;
 
   .single_product_card {
-    @apply flex flex-col md:flex-row gap-y-10 space-x-32 container;
+    @apply flex flex-col md:flex-row gap-y-10 md:space-x-32 container;
 
     .wp-post-image {
       @apply aspect-square object-cover;
@@ -22,7 +22,8 @@
   }
 
   .entry-summary {
-    @apply md:basis-2/5 m-0 space-x-0;
+    // margin-left: 0 !important;
+    @apply md:basis-2/5 space-x-0;
 
     .price {
       @apply border-b border-gray-400 pb-4 mb-4;
