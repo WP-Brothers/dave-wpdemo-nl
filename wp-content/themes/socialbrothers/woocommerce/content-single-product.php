@@ -33,17 +33,7 @@ if ( post_password_required() ) {
 ?>
 	<div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 		<div class="product_container">
-			<?php
-			/**
-			 * Hook: woocommerce_before_single_product_summary.
-			 *
-			 * @hooked woocommerce_show_product_sale_flash - 10
-			 * @hooked woocommerce_show_product_images - 20
-			 */
-			do_action( 'woocommerce_before_single_product_summary' );
-			?>
 			<section class="single_product_card">
-
 			<?php
 			/**
 			 * Hook: woocommerce_before_single_product_summary.

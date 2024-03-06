@@ -10,4 +10,13 @@ form {
                 @apply grid my-2;
             }
         }
-    }}
+    }
+
+    textarea {
+        @apply w-full p-4 border border-gray-200 rounded-s;
+    }
+
+    input[type=submit] {
+        @apply btn;
+    }
+}
