@@ -1,0 +1,14 @@
+.woocommerce-breadcrumb {
+    @apply flex items-center md:gap-6 text-gray-500 text-sm;
+
+    a {
+        @apply underline
+    }
+
+    .delimiter {
+        &::before {
+    
+            @apply content-["\e5e1"] font-iconRound text-xs leading-4 ;
+        }
+    }
+}
