@@ -1,7 +1,4 @@
 .overview {
-
-      
-
     li {
         @apply grid gap-6 border border-gray-200 rounded-s mb-10 md:w-56 relative;
 
@@ -29,6 +26,10 @@
             }
 
             &__price {
+                .price {
+                    @apply flex-wrap;
+                }
+
                 p {
                     @apply mb-0;
 

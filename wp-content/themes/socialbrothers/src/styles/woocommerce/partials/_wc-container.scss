@@ -31,6 +31,10 @@ section {
         
         }
     }
+
+    &.filter_panel {
+        @apply flex flex-col md:flex-row gap-6 items-baseline py-4 mb-10 justify-between border-b border-gray-500;
+    }
 }
 
 
