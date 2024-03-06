@@ -14,7 +14,7 @@
         
 
         .prev, .next {
-            @apply btn--outline text-2xl font-thin font-iconRound;
+            @apply btn btn--outline text-2xl font-thin font-iconRound;
         }
     
         .current {
