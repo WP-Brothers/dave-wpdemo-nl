@@ -23,3 +23,4 @@ add_action('woocommerce_after_single_product_summary', function() {
 add_action('woocommerce_after_single_product_summary', function() {
     wpb_add_container("section", false);
 }, 16);
+

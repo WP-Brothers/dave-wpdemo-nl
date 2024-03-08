@@ -1,5 +1,5 @@
 .woocommerce-breadcrumb {
-    @apply flex items-center md:gap-6 text-gray-500 text-sm;
+    @apply flex items-center md:gap-6 text-gray-500 text-sm mb-20 pb-4 border-b border-gray-200;
 
     a {
         @apply underline

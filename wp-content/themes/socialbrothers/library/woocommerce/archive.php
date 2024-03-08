@@ -35,3 +35,11 @@ add_action('woocommerce_before_shop_loop', function() {
 add_action('woocommerce_before_shop_loop', function() {
     wpb_add_container("section", false);
 }, 31);
+
+add_filter('gettext', 'custom_facetwp_toggle_text', 10, 3);
+function custom_facetwp_toggle_text($translated_text, $text, $domain) {
+    if ('fwp-front' == $domain && 'See {num} more' == $translated_text) {
+        $translated_text = sprintf(__('tool alle ({num})', '_SBF'));
+    }
+    return $translated_text;
+}

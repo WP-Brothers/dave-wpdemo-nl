@@ -29,12 +29,9 @@
     }
   }
 
-  &--ghost {
-    --primary: rgb(255 255 255 / 24%);
-    --alt: #fff;
-    --secondary: rgb(255 255 255 / 12%);
+  &--disabled {
 
-    @apply border-transparent border-b-[var(--secondary)];
+    @apply bg-neutral-25 cursor-not-allowed;
 
     &:hover {
       @apply border-b-transparent border-transparent;
