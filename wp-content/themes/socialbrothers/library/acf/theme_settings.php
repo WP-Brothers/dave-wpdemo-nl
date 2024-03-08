@@ -40,6 +40,113 @@ function acf_theme_settings()
                 'wrapper'   => ['width' => 50],
             ],
             [
+                'key'       => "{$prefix}_trustpilot_tab",
+                'label'     => __('Trustpilot', '_SBB'),
+                'type'      => 'tab',
+                'placement' => 'left',
+            ],
+            [
+                'key'     => "{$prefix}_trustpilot_rating",
+                'name'    => 'trustpilot_rating',
+                'label'   => __('Trustpilot beoordeling ', '_SBB'),
+                'type'    => 'number',
+                'instructions' => __('Geef hier de beoordeling cijfer aan (0 - 5)', '_SBB'),
+                'max'     => 5,
+                'wrapper'   => ['width' => 33],
+            ],
+            [
+                'key'     => "{$prefix}_trustpilot_icon",
+                'name'    => 'trustpilot_icon',
+                'label'   => __('Beoordeling  icoon', '_SBB'),
+                'type'    => 'GOOGLE_MATERIAL_ICON',
+                'instructions' => __('Geef aan welke icoon je wilt', '_SBB'),
+                'wrapper'   => ['width' => 33],
+            ],
+            'background' => [
+                'key'   => "{$prefix}_icon_background",
+                'label' => __('Icoon achtergrond kleur', '_SBB'),
+                'name' => 'icon_background',
+                'type' => 'select',
+                'instructions' => __('Selecteer een achtergrond kleur', '_SBB'),
+                'wrapper' => ['width' => 33],
+                'choices' => [
+                    '' => __('Geen', '_SBB'),
+                    'bg-secondary' => __('Groen', '_SBB'),
+                    'bg-neutral-25' => __('Wit', '_SBB'),
+                    'bg-primary' => __('Oranje', '_SBB'),
+    
+                ],
+            ],
+            [
+                'key'       => "{$prefix}_usp_tab",
+                'label'     => __('Unieke verkoopargumenten', '_SBB'),
+                'type'      => 'tab',
+                'placement' => 'left',
+            ],
+            [
+                'key'        => "{$prefix}_usp_links",
+                'label'      => __('UUnieke verkoopargumenten', '_SBB'),
+                'name'       => 'usp_links',
+                'type'       => 'repeater',
+                'layout'     => 'block',
+                'sub_fields' => [
+                    [
+                        'key'     => "{$prefix}_usp_text",
+                        'name'    => 'usp_text',
+                        'label'   => __('Argument ', '_SBB'),
+                        'type'    => 'text',
+                    ],
+                    [
+                        'key'     => "{$prefix}_usp_text_use_icon",
+                        'name'    => 'use_icon',
+                        'label'   => __('Icoon gebruiken?', '_SBB'),
+                        'type'    => 'true_false',
+                        'ui'      => true,
+                        'wrapper' => [
+                            'width' => '30%',
+                        ],
+                    ],
+                    [
+                        'key'     => "{$prefix}_usp_text_icon",
+                        'name'    => 'icon',
+                        'label'   => __('Icoon', '_SBB'),
+                        'type'    => 'GOOGLE_MATERIAL_ICON',
+                        'wrapper' => [
+                            'width' => '40%',
+                        ],
+                        
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'field'    => "{$prefix}_usp_text_use_icon",
+                                    'operator' => '==',
+                                    'value'    => 1,
+                                ],
+                            ],
+                        ],
+                    ],
+                    [
+                        'key'     => "{$prefix}_usp_text_icon_pos",
+                        'name'    => 'icon_pos',
+                        'label'   => __('Icoon Rechts?', '_SBB'),
+                        'type'    => 'true_false',
+                        'ui'      => true,
+                        'wrapper' => [
+                            'width' => '30%',
+                        ],
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'field'    => "{$prefix}_usp_text_use_icon",
+                                    'operator' => '==',
+                                    'value'    => 1,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            [
                 'key'       => "{$prefix}_contact_tab",
                 'label'     => __('Contact', '_SBB'),
                 'type'      => 'tab',
@@ -135,7 +242,7 @@ function acf_theme_settings()
                         'key'     => "{$prefix}_header_text",
                         'name'    => 'header_text',
                         'label'   => __('Tekst boven de navigatie ', '_SBB'),
-                        'type'    => 'wysiwyg',
+                        'type'    => 'text',
                         
                     ],
                     
