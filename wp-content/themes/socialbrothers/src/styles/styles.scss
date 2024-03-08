@@ -19,6 +19,26 @@
 @use "components/menu-simple";
 
 
+@use "./woocommerce/wc-form";
+
+@use "./woocommerce/wc-archive";
+
+@use "./woocommerce/wc-single-product";
+
+@use "./woocommerce/wc-product-card";
+
+@use "./woocommerce/wc-sidebar";
+
+@use "./woocommerce/partials/wc-product-meta";
+
+@use "./woocommerce/partials/wc-breadcrums";
+
+@use "./woocommerce/partials/wc-typography";
+
+@use "./woocommerce/partials/wc-container";
+
+
+
 html,
 body {
   --wp--preset--spacing--20: 20px;

@@ -173,3 +173,15 @@ function wpb_frontend_admin_bar_sticky()
 }
 
 add_filter('init', 'wpb_frontend_admin_bar_sticky');
+
+
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+function wpb_add_woocommerce_support()
+{
+    add_theme_support('woocommerce');
+    foreach ( glob( get_template_directory() . '/socialbrothers/library/woocommerce/*.php' ) as $file ) {
+        include $file;
+    }
+
+}
+add_action('after_setup_theme', 'wpb_add_woocommerce_support');

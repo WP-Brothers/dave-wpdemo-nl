@@ -8,7 +8,14 @@
 }
 
 form {
-    input[type="text"], select {
-        @apply w-full md:min-w-52 p-2 border-2 border-gray-200;
+    input[type="text"],
+    input[type="number"],
+    select {
+        @apply w-full md:min-w-52 p-2 border-2 border-gray-200 min-h-12;
+
+        &.qty {
+            @apply w-fit md:min-w-fit;
+        }
     }
+   
 }

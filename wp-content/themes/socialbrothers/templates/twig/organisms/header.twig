@@ -6,17 +6,13 @@
 				{% if header_meta %}
 					{% for item in header_meta %}
 
-						<div class='flex flex-row gap-4 items-normal'>
-							{% if item.icon %}
-								{% include 'atoms/icon.twig' with {
-                                    icon  : item.icon,
-                                    color : 'text-secondary',
-                                    size  : 'text-2xl',
-                                } %}
-							{% endif %}
+						{% include 'molecules/usp.twig' with {
+							usp_icon 	: item.icon,
+							usp_text 	: item.header_text,
+							usp_color 	: 'text-secondary',
+							usp_size 	: 'text-2xl',
+						} %}
 
-							{% include 'atoms/text.twig' with { text : item.header_text } %}
-						</div>
 					{% endfor %}
 				{% endif %}
 			</div>

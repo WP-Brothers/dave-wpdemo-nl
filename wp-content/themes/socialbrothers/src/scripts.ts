@@ -26,6 +26,15 @@ const scriptsInit = () => {
         module.default(menuMain as HTMLElement)
       )
     );
+  } 
+  
+  const sidebar = document.querySelector(
+    '.sidebar'
+  );
+  if (sidebar) {
+      import('./scripts/sidebar').then((module) =>
+        module.default(sidebar as HTMLElement)
+      );
   }
 
     const menu = document.querySelector('.menu_container');
