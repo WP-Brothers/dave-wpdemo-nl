@@ -21,7 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 
-// echo $product;
 $button_class = $product->stock_status == 'instock' ? ' btn product-card__button' : 'btn btn--disabled';
 $cart_text = $product->stock_status == 'instock' ? esc_html( $product->add_to_cart_text() ) : 'Out of stock';
 
