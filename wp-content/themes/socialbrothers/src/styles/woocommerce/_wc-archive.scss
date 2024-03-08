@@ -34,3 +34,9 @@
         @apply w-full;
     }
 }
+
+.archive {
+   &__wrapper {
+    @apply flex space-x-6;
+   }
+}

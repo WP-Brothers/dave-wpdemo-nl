@@ -21,16 +21,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 
+// echo $product;
+$button_class = $product->stock_status == 'instock' ? ' btn product-card__button' : 'btn btn--disabled';
+$cart_text = $product->stock_status == 'instock' ? esc_html( $product->add_to_cart_text() ) : 'Out of stock';
+
+
 echo apply_filters(
 	'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
 	sprintf(
 		'<a href="%s" data-quantity="%s" class="%s" %s><span>%s</span></a>',
 		esc_url( $product->add_to_cart_url() ),
 		esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
-		'btn product-card__button',
+		$button_class,
 		isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
-		esc_html( $product->add_to_cart_text() )
+		$cart_text
 	),
 	$product,
 	$args
 );
+
