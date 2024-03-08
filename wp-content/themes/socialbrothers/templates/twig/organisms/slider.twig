@@ -14,7 +14,7 @@
 
 		<section class='flex flex-col w-full space-y-4 md:w-2/5'>
 			<div class='md:w-64'>
-				{% include 'modules/side-content.twig' with content_block %}
+				{% include 'molecules/side-content.twig' with content_block %}
 			</div>
 		</section>
 
@@ -32,7 +32,7 @@
 									style       : category_type,
 									category    : slide.category,
 								}%}
-								{% include 'modules/slide.twig' with slide_data %}
+								{% include 'molecules/slide.twig' with slide_data %}
 							</div>
 						{% endfor %}
 					</div>
