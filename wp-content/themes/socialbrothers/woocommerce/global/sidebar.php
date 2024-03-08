@@ -33,7 +33,6 @@ function display_facetWP_sidebar() {
 		set_facetWP_filter_name('Je gekozen filters', 'trash');
 		echo do_shortcode('[facetwp facet="verwijder" selections="true"]');
 		echo '</header>';
-		// echo facetwp_display( 'selections' ); 
 		echo do_shortcode('[facetwp selections="true"]');
 
 		echo facetwp_display( 'verwijder' ); 
