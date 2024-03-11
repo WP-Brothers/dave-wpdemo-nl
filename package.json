@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "SET NODE_ENV=production && tsc && vite build",
+    "build": "NODE_ENV=production && tsc && vite build",
     "preview": "vite preview",
     "eslint": "eslint --ignore-path .gitignore --ext .ts .",
     "eslint:fix": "eslint --ignore-path .gitignore --ext .ts . --fix",
