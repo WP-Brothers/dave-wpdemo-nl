@@ -1,45 +1,33 @@
 <section class="w-screen p-2 py-6 md:p-10 md:py-14 {{ wrapper_background }}">
-
-	<div class='container'>
-		<div class="flex flex-col md:flex-row mx-auto gap-8 justify-between">
-
-			{% for info_box in repeater_items %}
-
-				{% set text_color = info_box.box_background == 'bg-secondary' ? 'text-white' : 'text-black' %}
-				{% set icon_color = info_box.box_background == 'bg-secondary' ? 'text-white' : 'text-secondary' %}
-
-				<div class='flex flex-col gap-2 w-auto p-4 text-left rounded-lg {{ text_color }} {{info_box.box_background}}'>
-
-					{% if info_box.box_icon %}
-						{% include 'atoms/icon.twig' with {
-						icon	: info_box.box_icon,
-						size	: info_box.box_icon_size,
-						color	: icon_color,
-						align	: 'right'
-					} %}
-					{% endif %}
-
-					{% if title != '' %}
-						<p class="font-semibold text-2xl">{{ info_box.box_title }}</p>
-					{% endif %}
-
-					{% include 'atoms/text.twig' with {'text': info_box.box_content|raw} %}
-
-					{% if info_box.box_link %}
-
-						{% include 'atoms/button.twig' with {
-						title				: info_box.box_link.title,
-						url					: info_box.box_link.url,
-						type				: info_box.box_link_type,
-						additional_classes	: 'w-fit',
-						icon				: info_box.box_link_icon
-					} %}
-
-					{% endif %}
-
-				</div>
-			{% endfor %}
-		</div>
-	</div>
-
+    <div class='container'>
+        <div class="flex flex-col md:flex-row mx-auto gap-8 justify-between">
+            {% for info_box in repeater_items %}
+                {% set text_color = info_box.box_background == 'bg-secondary' ? 'text-white' : 'text-black' %}
+                {% set icon_color = info_box.box_background == 'bg-secondary' ? 'text-white' : 'text-secondary' %}
+                <div class='flex flex-col gap-2 w-auto p-4 text-left rounded-lg {{ text_color }} {{ info_box.box_background }}'>
+                    {% if info_box.box_icon %}
+                        {% include 'atoms/icon.twig' with {
+                        icon: info_box.box_icon,
+                        size: info_box.box_icon_size,
+                        color: icon_color,
+                        align: 'right'
+                    } %}
+                    {% endif %}
+                    {% if title != '' %}
+                        <p class="font-semibold text-2xl">{{ info_box.box_title }}</p>
+                    {% endif %}
+                    {% include 'atoms/text.twig' with {'text': info_box.box_content|raw} %}
+                    {% if info_box.box_link %}
+                        {% include 'atoms/button.twig' with {
+                        title: info_box.box_link.title,
+                        url: info_box.box_link.url,
+                        type: info_box.box_link_type,
+                        additional_classes: 'w-fit',
+                        icon: info_box.box_link_icon
+                    } %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 </section>

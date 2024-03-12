@@ -1,101 +1,83 @@
 <header class='header-nav sticky top-0 flex flex-col w-full items-center py-6 z-50 bg-white'>
-
-	<div class='container relative h-max'>
-		<section class='hidden md:flex flex-wrap justify-between pt-4 items-center'>
-			<div class='flex flex-row space-x-10'>
-				{% if usp_args  %}
-                   {% for usp_arg in usp_args  %}
+    <div class='container relative h-max'>
+        <section class='hidden md:flex flex-wrap justify-between pt-4 items-center'>
+            <div class='flex flex-row space-x-10'>
+                {% if usp_args %}
+                   {% for usp_arg in usp_args %}
                         {% include 'molecules/usp.twig' with {
-                            usp_icon    : usp_arg['icon'],
-                            usp_text    : usp_arg['usp_text'],
-                            usp_color 	: 'text-secondary',
-							usp_size 	: 'text-2xl',
+                            usp_icon: usp_arg['icon'],
+                            usp_text: usp_arg['usp_text'],
+                            usp_color: 'text-secondary',
+                            usp_size: 'text-2xl',
                         } %}
                     {% endfor %}
                 {% endif %}
-			</div>
-
+            </div>
             {% include 'molecules/review.twig' with {
-                review_icon : trustpilot['icon'],
-                bg_color    : trustpilot['bg_color'],
-                rating      : trustpilot['rating'],
-            }%}
-
+                review_icon: trustpilot['icon'],
+                bg_color: trustpilot['bg_color'],
+                rating: trustpilot['rating'],
+            } %}
         </section>
-
-			<section class='flex max-h-14 justify-between w-full gap 2'>
-            
+            <section class='flex max-h-14 justify-between w-full gap 2'>
                 <div class='flex items center space-x-10'
-
                     <a href='{{ logo_small_link }}' class='max-w-60 mr-6'>
                         {% include 'atoms/image.twig' with {
-                            image           : logo_small_id,
-                            image_classes   : 'h-18 w-auto' } %}
+                            image: logo_small_id,
+                            image_classes: 'h-18 w-auto'} %}
                     </a>
-
                     {% include 'atoms/button.twig' with {
-                        url     : '#',
-                        title   : 'assotiment',
-                        type    : 'primary solid',
-                        target  : '#',
-                        icon    : 'menu',
+                        url: '#',
+                        title: 'assotiment',
+                        type: 'primary solid',
+                        target: '#',
+                        icon: 'menu',
                     } %}
-
                     <form action='#' method='get' class='flex justify-end bg-white md:w-96'>
                         <fieldset class='flex flex-row gap-4 relative w-full'>
                             <input type='text' name='search_field' class='w-full md:min-w-52 p-2 border-2 border-gray-200' placeholder='{{ 'Zoek naar...'|translatable }}'/>
                             <button type='submit' class='search-button absolute right-0 top-0.5 hover:bg-primary-light p-2'>
                                 {% include 'atoms/icon.twig' with {
-                                icon  : 'search',
-                                color : 'text-primary',
-                                size  : 'text-3xl'
+                                icon: 'search',
+                                color: 'text-primary',
+                                size: 'text-3xl'
                                 } %}
                             </button>
                         </fieldset>
                     </form>
-
                 </div>
-
                 <div class='flex items-center space-x-8'>
                     {% for action in shop_actions %}
-                    
                         {% include 'atoms/link.twig' with {
-                            url     : action.link['url'],
-                            title   : action.link['title'],
-                            target  : action.link['target'],
-                            icon    : action.icon,
-                            size    : 'text-2xl',
-                            additional_classes : 'flex items-center text-primary uppercase font-bold gap-2'
-                        } %}    
-
+                            url: action.link['url'],
+                            title: action.link['title'],
+                            target: action.link['target'],
+                            icon: action.icon,
+                            size: 'text-2xl',
+                            additional_classes: 'flex items-center text-primary uppercase font-bold gap-2'
+                        } %}
                     {% endfor %}
                 </div>
-				
-
-				{# <div class='flex flex-row items-center space-x-8'> #}
-
-					{# <div class='hidden md:block'>
-						<input type='checkbox' name='search_toggle' id='search_toggle' class='hidden'/>
-						<label for='search_toggle' class='flex items-center gap-2 cursor-pointer'>
-							{% include 'atoms/icon.twig' with {
-						icon  : 'search',
-						color : 'text-primary',
-						size  : 'text-2xl'
-						} %}
-						</label>
-					</div> #}
-
-				{# <div class='flex md:hidden'>
-					<button class='menu_toggle'>
-						{% include 'atoms/icon.twig' with {
-						icon  : 'menu',
-						color : 'text-primary',
-						size  : 'text-4xl'
-					} %}
-					</button>
-				</div> #}
-			</section>
-
-
-		</div>
-	</header>
+                {# <div class='flex flex-row items-center space-x-8'> #}
+                    {# <div class='hidden md:block'>
+                        <input type='checkbox' name='search_toggle' id='search_toggle' class='hidden'/>
+                        <label for='search_toggle' class='flex items-center gap-2 cursor-pointer'>
+                            {% include 'atoms/icon.twig' with {
+                        icon  : 'search',
+                        color : 'text-primary',
+                        size  : 'text-2xl'
+                        } %}
+                        </label>
+                    </div> #}
+                {# <div class='flex md:hidden'>
+                    <button class='menu_toggle'>
+                        {% include 'atoms/icon.twig' with {
+                        icon  : 'menu',
+                        color : 'text-primary',
+                        size  : 'text-4xl'
+                    } %}
+                    </button>
+                </div> #}
+            </section>
+        </div>
+    </header>
