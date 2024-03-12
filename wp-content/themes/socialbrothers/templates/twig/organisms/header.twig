@@ -1,104 +1,91 @@
 <header class='header-nav sticky top-0 flex flex-col w-full items-center py-6 z-50 bg-white'>
-
-	<div class='container relative h-max'>
-		<section class='hidden md:flex flex-wrap justify-between pt-4'>
-			<div class='flex flex-row space-x-10'>
-				{% if header_meta %}
-					{% for item in header_meta %}
-
-						{% include 'molecules/usp.twig' with {
-							usp_icon 	: item.icon,
-							usp_text 	: item.header_text,
-							usp_color 	: 'text-secondary',
-							usp_size 	: 'text-2xl',
-						} %}
-
-					{% endfor %}
-				{% endif %}
-			</div>
-
-			<div class='flex flex-row items-center gap-4'>
-				{% if header_links %}
-					{% for header in header_links %}
-						{% include 'atoms/link.twig' with header.header_links %}
-					{% endfor %}
-				{% endif %}
-
-				<form action='#' method='get'>
-					<select name='language' id='language'>
-						<option value='NL'>{{ 'Nederlands'|translatable }}</option>
-						<option value='EN'>{{ 'Engels'|translatable }}</option>
-					</select>
-				</form</div>
-
-			</section>
-
-			<section class='flex md:items-center justify-between'>
-
-				<a href='{{ logo_link }}' class='max-w-60 mr-6'>
-					{% include 'atoms/image.twig' with {
-			image           : logo_id,
-			image_classes   : 'h-18 w-full' } %}
-				</a>
-
-				<nav class='md:flex flex-col menu_container hidden absolute md:relative md:left-0 md:top-0 left-1/2 top-20 w-screen md:w-full bg-white md:bg-none -translate-x-1/2 md:translate-x-0'>
-					<div class='container'>
-						{{ menu|raw}}
-
-						<div class='md:hidden md:absolute top-20 search-form w-full mb-10 md:m-0  '>
-							<form action='#' method='get' class='flex justify-end bg-white'>
-									<fieldset class='flex flex-row gap-4'>
-										<input type='text' name='search_field' class='w-full md:min-w-52 p-2 border-2 border-gray-200' placeholder='{{ 'Zoek naar...'|translatable }}'/>
-										<button type='submit' class='py-[10px] px-4 border-2 justify-center uppercase no-underline font-bold rounded-[4px] inline-flex gap-2 leading-4 border-primary bg-primary text-white transition-colors items-center min-h-[48px]'>
-											{% include 'atoms/icon.twig' with {
-											icon  : 'search',
-											color : 'inherit',
-											size  : 'text-2xl'
-											} %}
-											{{ 'Zoek'|translatable }}
-										</button>
-									</fieldset>
-							</form>
-						</div>
-					</div>
-				</nav>
-
-				<div class='flex flex-row items-center space-x-8'>
-
-					<div class='hidden md:block'>
-						<input type='checkbox' name='search_toggle' id='search_toggle' class='hidden'/>
-						<label for='search_toggle' class='flex items-center gap-2 cursor-pointer'>
-							{% include 'atoms/icon.twig' with {
-						icon  : 'search',
-						color : 'text-primary',
-						size  : 'text-2xl'
-						} %}
-						</label>
-					</div>
-
-					{% if buttons %}
-						{% for button in buttons %}
-							{% include 'atoms/button.twig' with {
-						url     : button.link.url,
-						title   : button.link.title,
-						type    : button.type,
-						target  : button.link.target,
-					} %}
-						{% endfor %}
-					{% endif %}
-				</div>
-
-				<div class='flex md:hidden'>
-					<button class='menu_toggle'>
-						{% include 'atoms/icon.twig' with {
-						icon  : 'menu',
-						color : 'text-primary',
-						size  : 'text-4xl'
-					} %}
-					</button>
-				</div>
-			</section>
-
-
-		</div>
-	</header>
+    <div class='container relative h-max'>
+        <section class='hidden md:flex flex-wrap justify-between pt-4'>
+            <div class='flex flex-row space-x-10'>
+                {% if header_meta %}
+                    {% for item in header_meta %}
+                        {% include 'molecules/usp.twig' with {
+                            usp_icon: item.icon,
+                            usp_text: item.header_text,
+                            usp_color: 'text-secondary',
+                            usp_size: 'text-2xl',
+                        } %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class='flex flex-row items-center gap-4'>
+                {% if header_links %}
+                    {% for header in header_links %}
+                        {% include 'atoms/link.twig' with {
+                            links: header.header_links,
+                            additional_classes: 'underline hover:no-underline font-bold',
+                         } %}
+                    {% endfor %}
+                {% endif %}
+                <form action='#' method='get'>
+                    <select name='language' id='language'>
+                        <option value='NL'>{{ 'Nederlands'|translatable }}</option>
+                        <option value='EN'>{{ 'Engels'|translatable }}</option>
+                    </select>
+                </form</div>
+            </section>
+            <section class='flex md:items-center justify-between'>
+                <a href='{{ logo_link }}' class='max-w-60 mr-6'>
+                    {% include 'atoms/image.twig' with {
+                        image: logo_full_id,
+                        image_classes: 'h-18 w-full'} %}
+                </a>
+                <nav class='md:flex flex-col menu_container hidden absolute md:relative md:left-0 md:top-0 left-1/2 top-20 w-screen md:w-full bg-white md:bg-none -translate-x-1/2 md:translate-x-0'>
+                    <div class='container'>
+                        {{ menu|raw }}
+                        <div class='md:hidden md:absolute top-20 search-form w-full mb-10 md:m-0  '>
+                            <form action='#' method='get' class='flex justify-end bg-white'>
+                                    <fieldset class='flex flex-row gap-4'>
+                                        <input type='text' name='search_field' class='w-full md:min-w-52 p-2 border-2 border-gray-200' placeholder='{{ 'Zoek naar...'|translatable }}'/>
+                                        <button type='submit' class='py-[10px] px-4 border-2 justify-center uppercase no-underline font-bold rounded-[4px] inline-flex gap-2 leading-4 border-primary bg-primary text-white transition-colors items-center min-h-[48px]'>
+                                            {% include 'atoms/icon.twig' with {
+                                            icon: 'search',
+                                            color: 'inherit',
+                                            size: 'text-2xl'
+                                            } %}
+                                            {{ 'Zoek'|translatable }}
+                                        </button>
+                                    </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+                <div class='flex flex-row items-center space-x-8'>
+                    <div class='hidden md:block'>
+                        <input type='checkbox' name='search_toggle' id='search_toggle' class='hidden'/>
+                        <label for='search_toggle' class='flex items-center gap-2 cursor-pointer'>
+                            {% include 'atoms/icon.twig' with {
+                        icon: 'search',
+                        color: 'text-primary',
+                        size: 'text-2xl'
+                        } %}
+                        </label>
+                    </div>
+                    {% if buttons %}
+                        {% for button in buttons %}
+                            {% include 'atoms/button.twig' with {
+                        url: button.link.url,
+                        title: button.link.title,
+                        type: button.type,
+                        target: button.link.target,
+                    } %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class='flex md:hidden'>
+                    <button class='menu_toggle'>
+                        {% include 'atoms/icon.twig' with {
+                        icon: 'menu',
+                        color: 'text-primary',
+                        size: 'text-4xl'
+                    } %}
+                    </button>
+                </div>
+            </section>
+        </div>
+    </header>

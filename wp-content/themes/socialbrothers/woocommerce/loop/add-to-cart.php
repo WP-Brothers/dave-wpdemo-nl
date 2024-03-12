@@ -1,6 +1,6 @@
 <?php
 /**
- * Loop Add to Cart
+ * Loop Add to Cart.
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/loop/add-to-cart.php.
  *
@@ -11,31 +11,34 @@
  * the readme will list any important changes.
  *
  * @see         https://woo.com/document/template-structure/
- * @package     WooCommerce\Templates
+ *
  * @version     3.3.0
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (! defined('ABSPATH')) {
+    exit;
 }
 
 global $product;
 
-$button_class = $product->stock_status == 'instock' ? ' btn product-card__button' : 'btn btn--disabled';
-$cart_text = $product->stock_status == 'instock' ? esc_html( $product->add_to_cart_text() ) : 'Out of stock';
-
+if (is_a($product, 'WC_Product')) {
+    $stock_status = $product->get_stock_status();
+    $button_class = 'instock' === $stock_status ? 'btn product-card__button' : 'btn btn--disabled';
+    $cart_text    = 'instock' === $stock_status ? esc_html($product->add_to_cart_text()) : 'Out of stock';
+} else {
+    $button_class = 'btn btn--disabled';
+    $cart_text    = 'Unavailable';
+}
 
 echo apply_filters(
-	'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
-	sprintf(
-		'<a href="%s" data-quantity="%s" class="%s" %s><span>%s</span></a>',
-		esc_url( $product->add_to_cart_url() ),
-		esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
-		$button_class,
-		isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
-		$cart_text
-	),
-	$product,
-	$args
+    'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
+    sprintf(
+        '<a href="%s" data-quantity="%s" class="%s" %s><span>%s</span></a>',
+        esc_url($product->add_to_cart_url()),
+        esc_attr(isset($args['quantity']) ? $args['quantity'] : 1),
+        $button_class,
+        isset($args['attributes']) ? wc_implode_html_attributes($args['attributes']) : '',
+        $cart_text
+    ),
+    $product,
+    $args
 );
-

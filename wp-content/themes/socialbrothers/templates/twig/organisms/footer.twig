@@ -1,39 +1,33 @@
 <footer class='bg-secondary-light p-2 py-10 md:p-10 md:pt-14 md:pb-5'>
-	<div class='container flex flex-col gap-y-6'>
-
-		<section class='flex flex-col md:flex-row'>
-			<div class='md:w-1/2'>
-				<div class=' w-full md:w-96'>
-					{% include 'atoms/text.twig' with {'text': content|raw} %}
-				</div>
-
-				<div class='flex flex-col font-semibold text-4xl gap-6 my-6'>
+    <div class='container flex flex-col gap-y-6'>
+        <section class='flex flex-col md:flex-row'>
+            <div class='md:w-1/2'>
+                <div class=' w-full md:w-96'>
+                    {% include 'atoms/text.twig' with {'text': content|raw} %}
+                </div>
+                <div class='flex flex-col font-semibold text-4xl gap-6 my-6'>
                     <a href='tel:{{ phone_link }}' class='hover:underline'>{{ phone }}</a>
                     <a href='mailto:{{ email }}' class='hover:underline'>{{ email }}</a>
-				</div>
-			</div>
-
-			<div class='flex flex-col md:flex-row justify-around items-start w-1/2 space-y-4 md:space-y-0'>
-				{{ menu1|raw }}
-				{{ menu2|raw }}
+                </div>
+            </div>
+            <div class='flex flex-col md:flex-row justify-around items-start w-1/2 space-y-4 md:space-y-0'>
+                {{ menu1|raw }}
+                {{ menu2|raw }}
             <div>
         </section>
-
         <div class='flex flex-col md:flex-row items-start md:items-centerr justify-between mt-10 text-left'>
             {{ menu_bottom|raw }}
-
             <div class='flex items-center justify-center space-x-6 mt-6 md:mt-0'>
                 {% if socials %}
                     {% for social in socials %}
                         <a href='{{ social.socials_platform.url }}' class='text-2xl'>
                             {% if social.socials_icon %}
-                                {% include 'atoms/company-icons/'~ social.socials_icon ~'.twig'%}
+                                {% include 'atoms/company-icons/' ~ social.socials_icon ~ '.twig' %}
                             {% endif %}
                         </a>
                     {% endfor %}
                 {% endif %}
             </div>
         </div>
-        
     </div>
 </footer>
