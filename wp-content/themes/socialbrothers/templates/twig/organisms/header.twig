@@ -20,7 +20,10 @@
 			<div class='flex flex-row items-center gap-4'>
 				{% if header_links %}
 					{% for header in header_links %}
-						{% include 'atoms/link.twig' with header.header_links %}
+						{% include 'atoms/link.twig' with {
+							links				: header.header_links,
+							additional_classes 	: 'underline hover:no-underline font-bold',
+						 } %}
 					{% endfor %}
 				{% endif %}
 
@@ -37,8 +40,8 @@
 
 				<a href='{{ logo_link }}' class='max-w-60 mr-6'>
 					{% include 'atoms/image.twig' with {
-			image           : logo_id,
-			image_classes   : 'h-18 w-full' } %}
+						image           : logo_full_id,
+						image_classes   : 'h-18 w-full' } %}
 				</a>
 
 				<nav class='md:flex flex-col menu_container hidden absolute md:relative md:left-0 md:top-0 left-1/2 top-20 w-screen md:w-full bg-white md:bg-none -translate-x-1/2 md:translate-x-0'>

@@ -30,8 +30,7 @@
   }
 
   &--disabled {
-
-    @apply bg-neutral-25 cursor-not-allowed;
+    @apply bg-neutral-25 cursor-not-allowed border-transparent;
 
     &:hover {
       @apply border-b-transparent border-transparent;

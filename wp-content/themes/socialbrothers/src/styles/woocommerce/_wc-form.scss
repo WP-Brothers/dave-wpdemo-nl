@@ -1,26 +1,30 @@
 form {
-    &.variations_form {
-        @apply flex flex-col;
+
+  &.variations-form {
+    @apply flex flex-col;
 
 
-        .variations {
-            @apply text-left w-full;
+    .variations {
+      @apply text-left w-full;
 
-            tr {
-                @apply grid my-2;
-            }
-        }
+      tr {
+        @apply grid my-2;
+      }
     }
+  }
 
-    textarea {
-        @apply w-full p-4 border border-gray-200 rounded-s;
-    }
+  textarea {
+    @apply w-full p-4 border border-gray-200 rounded-s;
+  }
 
 }
 
-input[type=submit], button[type=submit], input[type=button] {
-    @apply btn; 
+input[type="submit"],
+button[type="submit"]:not(.search-button),
+input[type="button"] {
+  @apply btn; 
 }
-input[type=text] {
-    @apply  w-full p-2 border-2 border-gray-200 min-h-12;
+
+input[type="text"] {
+  @apply  w-full p-2 border-2 border-gray-200 min-h-12;
 }
