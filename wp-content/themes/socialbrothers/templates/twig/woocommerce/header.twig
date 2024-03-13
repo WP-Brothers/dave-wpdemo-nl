@@ -26,14 +26,16 @@
                             image: logo_small_id,
                             image_classes: 'h-18 w-auto'} %}
                     </a>
-                    {% include 'atoms/button.twig' with {
-                        url: '#',
-                        title: 'assotiment',
-                        type: 'primary solid',
-                        target: '#',
-                        icon: 'menu',
-                    } %}
-                    <form action='#' method='get' class='flex justify-end bg-white md:w-96'>
+                    <div class='block md:hidden'>
+                    <button class='btn' id='sidebar-toggle'>
+                        {% include 'atoms/icon.twig' with {
+                            icon: 'menu',
+                            size: 'text-2xl'
+                        } %}
+                    </button>
+                   
+                    </div>
+                    <form action='#' method='get' class='md:flex justify-end bg-white md:w-96 hidden'>
                         <fieldset class='flex flex-row gap-4 relative w-full'>
                             <input type='text' name='search_field' class='w-full md:min-w-52 p-2 border-2 border-gray-200' placeholder='{{ 'Zoek naar...'|translatable }}'/>
                             <button type='submit' class='search-button absolute right-0 top-0.5 hover:bg-primary-light p-2'>

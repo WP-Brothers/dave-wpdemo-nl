@@ -53,7 +53,7 @@ $block_data = [
                     'wrapper' => ['width' => 33],
                 ],
                 [
-                    'key'     => "{$prefix}_linklabel",
+                    'key'     => "{$prefix}_link_label",
                     'label'   => __('Link Label', '_SBB'),
                     'name'    => 'link_label',
                     'type'    => 'text',
