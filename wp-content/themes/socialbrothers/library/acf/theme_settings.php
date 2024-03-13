@@ -438,6 +438,56 @@ function acf_theme_settings()
                 'media_upload'  => false,
                 'default_value' => __('maar we konden de pagina nergens vinden. We helpen je graag de weg terug te vinden. ', '_SBF'),
             ],
+            [
+                'key'           => "{$prefix}_404_image",
+                'name'          => '404_image',
+                'label'         => __('404 Afbeelding', '_SBB'),
+                'type'          => 'image',
+                'return_format' => 'id',
+                'mime_types'    => 'svg, png, jpg',
+                'return_format' => 'id',
+            ],
+            [
+                'key'     => "{$prefix}_404_button",
+                'label'   => __('Zoek knop', '_SBB'),
+                'name'    => '404_button',
+                'type'    => 'link',
+                'wrapper' => ['width' => 33],
+            ],
+            [
+                'key'     => "{$prefix}_404_button_type",
+                'label'   => __('Stijl', '_SBB'),
+                'name'    => '404_button_type',
+                'type'    => 'select',
+                'choices' => wpb_get_button_types(),
+                'wrapper' => ['width' => 33],
+            ],
+            [
+                'key'     => "{$prefix}_404_buttons_use_icon",
+                'name'    => '404_use_icon',
+                'label'   => __('Icoon gebruiken?', '_SBB'),
+                'type'    => 'true_false',
+                'ui'      => true,
+                'wrapper' => ['width' => 33],
+            ],
+            [
+                'key'     => "{$prefix}_404_buttons_icon",
+                'name'    => 'icon',
+                'label'   => __('Icoon', '_SBB'),
+                'type'    => 'GOOGLE_MATERIAL_ICON',
+                'wrapper' => [
+                    'width' => '40%',
+                ],
+                'conditional_logic' => [
+                    [
+                        [
+                            'field'    => "{$prefix}_404_buttons_use_icon",
+                            'operator' => '==',
+                            'value'    => 1,
+                        ],
+                    ],
+                ],
+            ],
         ],
         'location' => [
             [
