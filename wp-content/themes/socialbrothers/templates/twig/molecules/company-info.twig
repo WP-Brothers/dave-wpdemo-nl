@@ -1,0 +1,12 @@
+<div class="grid gap-2">
+    <h6 class="title mb-0">{{ info_label }}</h6>
+        {% include 'atoms/text.twig' with {text: content|raw} %}
+        {% if link %}
+            {% include 'atoms/link.twig' with {
+                url: link.url,
+                title: link.title,
+                target: link.target,
+                additional_classes: 'underline text-primary'
+                } %}
+        {% endif %}
+</div>

@@ -1,0 +1,6 @@
+<div class="bg-white rounded-lg p-6 md:p-10 border border-neutral-25 w-auto {{ float ? 'md:absolute form-card shadow-card max-w-lg right-1/4 top-1/4' : '' }}">
+    {% if title %}
+        <h2 class="title title__groot mb-6">{{ title }}</h2>
+    {% endif %}
+    {{ form|raw }}
+</div>

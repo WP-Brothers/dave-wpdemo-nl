@@ -1,0 +1,8 @@
+{% if socials_platform.url %}
+<a href='{{ url }}' class='flex items-center gap-4 hover:text-primary' socials_platform.target='{{ socials_platform.target|default('_self') }}'>
+        {% if socials_icon %}
+            {% include 'atoms/social-icons/' ~ socials_icon ~ '.twig' %}
+        {% endif %}
+        {{ socials_platform.title|raw }}
+    </a>
+{% endif %}

@@ -22,7 +22,7 @@
                     {% for social in socials %}
                         <a href='{{ social.socials_platform.url }}' class='text-2xl'>
                             {% if social.socials_icon %}
-                                {% include 'atoms/company-icons/' ~ social.socials_icon ~ '.twig' %}
+                                {% include 'atoms/footer-icons/' ~ social.socials_icon ~ '.twig' %}
                             {% endif %}
                         </a>
                     {% endfor %}

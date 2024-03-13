@@ -1,21 +1,40 @@
 .header-nav {
-    &:has(#search_toggle:checked) {
-        .search-form {
-            @apply block;
-        }
 
+  &:has(#search-toggle:checked) {
+
+    .search-form {
+      @apply block;
     }
+
+  }
 }
 
 form {
-    input[type="text"],
-    input[type="number"],
-    select {
-        @apply w-full md:min-w-52 p-2 border-2 border-gray-200 min-h-12;
 
-        &.qty {
-            @apply w-fit md:min-w-fit;
-        }
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  select {
+    @apply w-full md:min-w-52 p-2 border-2 border-gray-200 min-h-12 outline-none;
+
+    &.qty {
+      @apply w-fit md:min-w-fit;
     }
+
+    &:focus,
+    &:active {
+      @apply border-primary;
+    } 
+  }   
+
+  textarea {
+    @apply w-full p-2 border-2 border-gray-200 min-h-12 outline-none;
+
+    &:focus,
+    &:active {
+      @apply border-primary;
+    }
+  }
+
    
 }

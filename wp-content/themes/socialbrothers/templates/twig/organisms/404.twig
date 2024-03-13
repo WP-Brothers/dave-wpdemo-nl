@@ -1,0 +1,35 @@
+<div class='container'>
+    <section class='flex flex-col md:flex-row-reverse justify-between items-start gap-6 my-16'>
+
+        <figure class='w-1/2'>
+
+            {% if image_id != '' %}
+                {% include 'atoms/image.twig' with {'image' : image_id} %}
+            {% endif %}
+
+        </figure>
+
+        <div class='max-w-96 space-y-10'>
+            {% if title != '' %}
+                <h1 class= 'title title__groot my-4'>{{ title }}</h1>
+            {% endif %}
+
+            {% include 'atoms/text.twig' with {'text': content|raw} %}
+
+
+            <form class='flex flex-col' action='/search' method='get'>
+                <fieldset class='flex gap-2'>
+                    <input class='input input__search' type='text' name='404-search' placeholder='Search' />
+                    {{button.icon}}
+                    {% if button %}
+                        {% include 'atoms/button.twig' with button %}
+                    {% endif %}
+                </fieldset>
+            </form>
+
+            {{ menu_404|raw }}
+        </div>  
+
+      
+    </section>
+</div>
