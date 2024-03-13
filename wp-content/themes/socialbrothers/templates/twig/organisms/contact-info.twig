@@ -1,0 +1,12 @@
+<section class="w-screen p-2 py-6 md:p-10 md:py-14 {{ wrapper_background }}">
+    <div class='container'>
+        <div class="flex flex-col md:max-w-96 gap-10">
+            {% for info in company_info %}
+                {% include 'molecules/company-info.twig' with info %}
+            {% endfor %}
+             {% if company_socials %}
+                {% include 'molecules/social-links.twig' with company_socials %}
+            {% endif %}
+        </div>
+    </div>
+</section>

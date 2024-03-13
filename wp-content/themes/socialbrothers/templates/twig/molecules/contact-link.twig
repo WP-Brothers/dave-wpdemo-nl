@@ -1,0 +1,22 @@
+
+{% if label %}
+    <p class='title title_medium'>{{ label }} </p>
+{% endif %}
+<div class="flex items-center my-2 gap-2">
+    {% if icon %}
+        {% include 'atoms/icon.twig' with {
+            icon: icon,
+            color: icon_color,
+            size: 'text-2xl',
+        } %}
+    {% endif %}
+    {% set link_url = (link_temp.url == '#') ? title : link_temp.url %}
+    {% include 'atoms/link.twig' with {
+            title: title,
+            url: link_url,
+            icon: '',
+            target: link_temp.target,
+            additional_classes: 'hover:text-primary hover:underline',
+        }
+    %}
+</div>

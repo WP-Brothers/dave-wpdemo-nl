@@ -1,0 +1,40 @@
+{
+  "name": "acf/contact-header",
+  "title": "Contact header",
+  "category": "sections",
+  "icon": "comment-author-name",
+  "keywords": ["info", "contact", "nummer", "email"],
+  "acf": {
+      "mode": "edit"
+  },
+  "supports": {
+      "anchor": true,
+      "jsx": true,
+      "align": [ "full", "wide" ],
+      "fullHeight": false,
+      "alignText": false,
+      "spacing": {
+          "margin": [
+              "top",
+              "bottom"
+          ],
+          "padding": [
+              "top",
+              "bottom"
+          ]
+      },
+      "layout": {
+          "default": {
+              "type": "flex"
+          },
+          "allowSwitching": false,
+          "allowEditing": true,
+          "allowInheriting": false,
+          "allowSizingOnChildren": false,
+          "allowVerticalAlignment": true,
+          "allowJustification": false,
+          "allowOrientation": true
+
+      }
+  }
+}

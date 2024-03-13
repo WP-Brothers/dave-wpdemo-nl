@@ -1,19 +1,23 @@
 .title {
-    @apply font-bold;
+  @apply font-bold;
 
-    &__groot {
-        @apply text-3xl;
-    }
+  &__xl {
+    @apply text-5xl;
+  } 
+    
+  &__groot {
+    @apply text-3xl;
+  }
 
-    &__medium {
-        @apply text-2xl;
-    }
+  &__medium {
+    @apply text-2xl;
+  }
 
-    &__small-medium {
-        @apply text-xl;
-    }
+  &__small-medium {
+    @apply text-xl;
+  }
 
-    &__small {
-        @apply text-lg;
-    }
+  &__small {
+    @apply text-lg;
+  }
 }
