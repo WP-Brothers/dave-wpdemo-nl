@@ -16,7 +16,7 @@ const scriptsInit = () => {
       )
     );
   }
-  
+
   const menuMains = document.querySelectorAll(
     '.menu-main:not(.menu-main--hover)'
   );
@@ -26,28 +26,45 @@ const scriptsInit = () => {
         module.default(menuMain as HTMLElement)
       )
     );
-  } 
-  
-  const sidebar = document.querySelector(
-    '.sidebar'
-  );
-  if (sidebar) {
-      import('./scripts/sidebar').then((module) =>
-        module.default(sidebar as HTMLElement)
-      );
   }
 
-    const menu = document.querySelector('.menu_container');
-    const menuToggle = document.querySelector('.menu_toggle');
-  
-    if (menu && menuToggle) {
-      menuToggle.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-        document.body.classList.toggle('overflow-hidden');
-      });
-    }
-  
-};
+  const sidebar = document.querySelector('.sidebar');
+  if (sidebar) {
+    import('./scripts/sidebar').then((module) =>
+      module.default(sidebar as HTMLElement)
+    );
+  }
 
+  const menu = document.querySelector('.menu_container');
+  const menuToggle = document.querySelector('.menu_toggle');
+
+  if (menu && menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      document.body.classList.toggle('overflow-hidden');
+    });
+  }
+
+  const sidebarMenu = document.querySelector('.sidebar');
+  const sidebarToggle = document.querySelector('#sidebar-toggle');
+
+  if (sidebarMenu && sidebarToggle) {
+    sidebarToggle.addEventListener('click', () => {
+      setTimeout(() => {
+        sidebarMenu.classList.toggle('show');
+      }, 100);
+    });
+
+    window.addEventListener('click', (e) => {
+      if (
+        e.target !== sidebarMenu &&
+        sidebarMenu.classList.contains('show') &&
+        e.target !== sidebarToggle
+      ) {
+        sidebarMenu.classList.remove('show');
+      }
+    });
+  }
+};
 
 export default scriptsInit;

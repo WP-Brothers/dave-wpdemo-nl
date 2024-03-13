@@ -23,22 +23,40 @@ function acf_theme_settings()
                 'placement' => 'left',
             ],
             [
-                'key'           => "{$prefix}_logo",
-                'name'          => 'logo',
-                'label'         => __('Logo', '_SBB'),
+                'key'           => "{$prefix}_logo_full",
+                'name'          => 'logo_full',
+                'label'         => __('Logo Volledig', '_SBB'),
                 'type'          => 'image',
                 'mime_types'    => 'svg, png, jpg',
                 'return_format' => 'id',
                 'instructions'  => __('Voeg hier het logo toe', '_SBB'),
-                'wrapper'   => ['width' => 50],
+                'wrapper'       => ['width' => 50],
             ],
             [
                 'key'     => "{$prefix}_logo_link",
                 'name'    => 'logo_link',
                 'label'   => __('Logo link', '_SBB'),
                 'type'    => 'link',
-                'wrapper'   => ['width' => 50],
+                'wrapper' => ['width' => 50],
             ],
+            [
+                'key'           => "{$prefix}_logo_small",
+                'name'          => 'logo_small',
+                'label'         => __('Logo Klein', '_SBB'),
+                'type'          => 'image',
+                'mime_types'    => 'svg, png, jpg',
+                'return_format' => 'id',
+                'instructions'  => __('Voeg hier het logo toe', '_SBB'),
+                'wrapper'       => ['width' => 50],
+            ],
+            [
+                'key'     => "{$prefix}_logo_small_link",
+                'name'    => 'logo_small_link',
+                'label'   => __('Logo link', '_SBB'),
+                'type'    => 'link',
+                'wrapper' => ['width' => 50],
+            ],
+
             [
                 'key'       => "{$prefix}_trustpilot_tab",
                 'label'     => __('Trustpilot', '_SBB'),
@@ -46,35 +64,34 @@ function acf_theme_settings()
                 'placement' => 'left',
             ],
             [
-                'key'     => "{$prefix}_trustpilot_rating",
-                'name'    => 'trustpilot_rating',
-                'label'   => __('Trustpilot beoordeling ', '_SBB'),
-                'type'    => 'number',
+                'key'          => "{$prefix}_trustpilot_rating",
+                'name'         => 'trustpilot_rating',
+                'label'        => __('Trustpilot beoordeling ', '_SBB'),
+                'type'         => 'number',
                 'instructions' => __('Geef hier de beoordeling cijfer aan (0 - 5)', '_SBB'),
-                'max'     => 5,
-                'wrapper'   => ['width' => 33],
+                'max'          => 5,
+                'wrapper'      => ['width' => 33],
             ],
             [
-                'key'     => "{$prefix}_trustpilot_icon",
-                'name'    => 'trustpilot_icon',
-                'label'   => __('Beoordeling  icoon', '_SBB'),
-                'type'    => 'GOOGLE_MATERIAL_ICON',
+                'key'          => "{$prefix}_trustpilot_icon",
+                'name'         => 'trustpilot_icon',
+                'label'        => __('Beoordeling  icoon', '_SBB'),
+                'type'         => 'GOOGLE_MATERIAL_ICON',
                 'instructions' => __('Geef aan welke icoon je wilt', '_SBB'),
-                'wrapper'   => ['width' => 33],
+                'wrapper'      => ['width' => 33],
             ],
             'background' => [
-                'key'   => "{$prefix}_icon_background",
-                'label' => __('Icoon achtergrond kleur', '_SBB'),
-                'name' => 'icon_background',
-                'type' => 'select',
+                'key'          => "{$prefix}_icon_background",
+                'label'        => __('Icoon achtergrond kleur', '_SBB'),
+                'name'         => 'icon_background',
+                'type'         => 'select',
                 'instructions' => __('Selecteer een achtergrond kleur', '_SBB'),
-                'wrapper' => ['width' => 33],
-                'choices' => [
-                    '' => __('Geen', '_SBB'),
-                    'bg-secondary' => __('Groen', '_SBB'),
+                'wrapper'      => ['width' => 33],
+                'choices'      => [
+                    ''              => __('Geen', '_SBB'),
+                    'bg-secondary'  => __('Groen', '_SBB'),
                     'bg-neutral-25' => __('Wit', '_SBB'),
-                    'bg-primary' => __('Oranje', '_SBB'),
-    
+                    'bg-primary'    => __('Oranje', '_SBB'),
                 ],
             ],
             [
@@ -91,10 +108,10 @@ function acf_theme_settings()
                 'layout'     => 'block',
                 'sub_fields' => [
                     [
-                        'key'     => "{$prefix}_usp_text",
-                        'name'    => 'usp_text',
-                        'label'   => __('Argument ', '_SBB'),
-                        'type'    => 'text',
+                        'key'   => "{$prefix}_usp_text",
+                        'name'  => 'usp_text',
+                        'label' => __('Argument ', '_SBB'),
+                        'type'  => 'text',
                     ],
                     [
                         'key'     => "{$prefix}_usp_text_use_icon",
@@ -114,7 +131,7 @@ function acf_theme_settings()
                         'wrapper' => [
                             'width' => '40%',
                         ],
-                        
+
                         'conditional_logic' => [
                             [
                                 [
@@ -194,7 +211,7 @@ function acf_theme_settings()
                 'name'       => 'socials',
                 'type'       => 'repeater',
                 'label'      => __('Sociaal media iconen', '_SBB'),
-                'layout'      => 'block',
+                'layout'     => 'block',
                 'sub_fields' => [
                     [
                         'key'     => "{$prefix}_socials_icon",
@@ -205,23 +222,22 @@ function acf_theme_settings()
                             'width' => '50%',
                         ],
                         'choices' => [
-                            '' => __('Geen', '_SBB'),
-                            'facebook' => __('Facebook', '_SBB'),
+                            ''          => __('Geen', '_SBB'),
+                            'facebook'  => __('Facebook', '_SBB'),
                             'instagram' => __('Instagram', '_SBB'),
-                            'linkedin' => __('Linked In', '_SBB'),
-                            'twitter' => __('X (voormalg Twitter)', '_SBB'),
+                            'linkedin'  => __('Linked In', '_SBB'),
+                            'twitter'   => __('X (voormalg Twitter)', '_SBB'),
                         ],
                     ],
                     [
-                        'key'   => "{$prefix}_socials_platform",
-                        'name'  => 'socials_platform',
-                        'type'  => 'link',
-                        'label' => __('Link', '_SBB'),
+                        'key'     => "{$prefix}_socials_platform",
+                        'name'    => 'socials_platform',
+                        'type'    => 'link',
+                        'label'   => __('Link', '_SBB'),
                         'wrapper' => [
                             'width' => '50%',
                         ],
                     ],
-                    
                 ],
             ],
             [
@@ -230,7 +246,7 @@ function acf_theme_settings()
                 'type'      => 'tab',
                 'placement' => 'left',
             ],
-           
+
             [
                 'key'        => "{$prefix}_header_meta",
                 'label'      => __('Reclame tekst', '_SBB'),
@@ -239,13 +255,11 @@ function acf_theme_settings()
                 'layout'     => 'block',
                 'sub_fields' => [
                     [
-                        'key'     => "{$prefix}_header_text",
-                        'name'    => 'header_text',
-                        'label'   => __('Tekst boven de navigatie ', '_SBB'),
-                        'type'    => 'text',
-                        
+                        'key'   => "{$prefix}_header_text",
+                        'name'  => 'header_text',
+                        'label' => __('Tekst boven de navigatie ', '_SBB'),
+                        'type'  => 'text',
                     ],
-                    
                     [
                         'key'     => "{$prefix}_header_text_use_icon",
                         'name'    => 'use_icon',
@@ -264,7 +278,7 @@ function acf_theme_settings()
                         'wrapper' => [
                             'width' => '40%',
                         ],
-                        
+
                         'conditional_logic' => [
                             [
                                 [
@@ -312,15 +326,15 @@ function acf_theme_settings()
                 ],
             ],
             [
-                'key'          => "{$prefix}_header_buttons",
-                'label'        => __('Knoppen', '_SBB'),
-                'name'         => 'header_buttons',
-                'label'        => __('Nieuwe knoppen', '_SBB'),
-                'type'         => 'repeater',
-                'max'          => 2,
-                'layout'       => 'block',
-                'collapsed'    => "{$prefix}_buttons_link",
-                'sub_fields'   => [
+                'key'        => "{$prefix}_header_buttons",
+                'label'      => __('Knoppen', '_SBB'),
+                'name'       => 'header_buttons',
+                'label'      => __('Nieuwe knoppen', '_SBB'),
+                'type'       => 'repeater',
+                'max'        => 2,
+                'layout'     => 'block',
+                'collapsed'  => "{$prefix}_buttons_link",
+                'sub_fields' => [
                     [
                         'key'     => "{$prefix}_buttons_link",
                         'name'    => 'link',
@@ -338,6 +352,50 @@ function acf_theme_settings()
                         'choices' => wpb_get_button_types(),
                         'wrapper' => [
                             'width' => '50%',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'key'        => "{$prefix}_shop_nav_actions",
+                'label'      => __('Knoppen', '_SBB'),
+                'name'       => 'shop_nav_actions',
+                'label'      => __('Winkel acties', '_SBB'),
+                'type'       => 'repeater',
+                'max'        => 2,
+                'layout'     => 'block',
+                'collapsed'  => "{$prefix}_wc_link",
+                'sub_fields' => [
+                    [
+                        'key'     => "{$prefix}_wc-link",
+                        'name'    => 'link',
+                        'label'   => __('Link', '_SBB'),
+                        'type'    => 'link',
+                        'wrapper' => ['width' => 40],
+                    ],
+                    [
+                        'key'     => "{$prefix}_wc-link_use_icon",
+                        'name'    => 'use_icon',
+                        'label'   => __('Icoon gebruiken?', '_SBB'),
+                        'type'    => 'true_false',
+                        'ui'      => true,
+                        'wrapper' => ['width' => 30],
+                    ],
+                    [
+                        'key'     => "{$prefix}_wc-link_icon",
+                        'name'    => 'icon',
+                        'label'   => __('Icoon', '_SBB'),
+                        'type'    => 'GOOGLE_MATERIAL_ICON',
+                        'wrapper' => ['width' => 30],
+
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'field'    => "{$prefix}_wc-link_use_icon",
+                                    'operator' => '==',
+                                    'value'    => 1,
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -379,6 +437,56 @@ function acf_theme_settings()
                 'tabs'          => 'visual',
                 'media_upload'  => false,
                 'default_value' => __('maar we konden de pagina nergens vinden. We helpen je graag de weg terug te vinden. ', '_SBF'),
+            ],
+            [
+                'key'           => "{$prefix}_404_image",
+                'name'          => '404_image',
+                'label'         => __('404 Afbeelding', '_SBB'),
+                'type'          => 'image',
+                'return_format' => 'id',
+                'mime_types'    => 'svg, png, jpg',
+                'return_format' => 'id',
+            ],
+            [
+                'key'     => "{$prefix}_404_button",
+                'label'   => __('Zoek knop', '_SBB'),
+                'name'    => '404_button',
+                'type'    => 'link',
+                'wrapper' => ['width' => 33],
+            ],
+            [
+                'key'     => "{$prefix}_404_button_type",
+                'label'   => __('Stijl', '_SBB'),
+                'name'    => '404_button_type',
+                'type'    => 'select',
+                'choices' => wpb_get_button_types(),
+                'wrapper' => ['width' => 33],
+            ],
+            [
+                'key'     => "{$prefix}_404_buttons_use_icon",
+                'name'    => '404_use_icon',
+                'label'   => __('Icoon gebruiken?', '_SBB'),
+                'type'    => 'true_false',
+                'ui'      => true,
+                'wrapper' => ['width' => 33],
+            ],
+            [
+                'key'     => "{$prefix}_404_buttons_icon",
+                'name'    => 'icon',
+                'label'   => __('Icoon', '_SBB'),
+                'type'    => 'GOOGLE_MATERIAL_ICON',
+                'wrapper' => [
+                    'width' => '40%',
+                ],
+                'conditional_logic' => [
+                    [
+                        [
+                            'field'    => "{$prefix}_404_buttons_use_icon",
+                            'operator' => '==',
+                            'value'    => 1,
+                        ],
+                    ],
+                ],
             ],
         ],
         'location' => [

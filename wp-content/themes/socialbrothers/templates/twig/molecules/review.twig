@@ -1,34 +1,29 @@
 {% set icon_color = bg_color == 'bg-neutral-25' ? 'text-secondary' : 'text-neutral-25' %}
 {% set stars_amount = 5 %}
-
 <div class='flex flex-row gap-4 items-center my-6'>
-
     <div class='flex items-center'>
         {% if review_icon %}
             {% include 'atoms/icon.twig' with {
-                icon  : review_icon,
-                color : 'text-secondary',
-                size  : 'text-2xl',
+                icon: review_icon,
+                color: 'text-secondary',
+                size: 'text-2xl',
             } %}
         {% endif %}
         <p class='font-bold mb-0'>{{ 'Trustpilot'|translatable }}</p>
     </div>
-
     <div class='flex items-center w-fit relative'>
-
         <div class='absolute bottom-0 top-0 {{ bg_color|default('bg-secondary') }}' style='width: {{ rating * 20 }}%;'></div>
         <div class=' flex bg-neutral-50 w-fit'>
             {% for i in 0..stars_amount - 1 %}
                 {% if review_icon %}
                     {% include 'atoms/icon.twig' with {
-                        icon                : review_icon,
-                        color               : icon_color,
-                        size                : 'text-2xl',
-                        addition_classes    : 'z-10'
+                        icon: review_icon,
+                        color: icon_color,
+                        size: 'text-2xl',
+                        addition_classes: 'z-10'
                     } %}
                 {% endif %}
             {% endfor %}
         </div>
     </div>
-
 </div>

@@ -1,12 +1,10 @@
 {% if sub_title != '' %}
-    <p class="{{ subtitle_color|default('text-black')}} font-semibold my-1">{{ sub_title }}</p>
+    <p class="{{ subtitle_color|default('text-black') }} font-semibold my-1">{{ sub_title }}</p>
 {% endif %}
-
 {% if title != '' %}
-    <h2 class= '{{ title_size}} my-4'>{{ title }}</h2>
+    <h2 class= '{{ title_size }} my-4'>{{ title }}</h2>
 {% endif %}
-
-
+{% include 'atoms/text.twig' with { text: content|raw } %}
 
 <div class='flex gap-5 mt-4'>
     {% if buttons %}

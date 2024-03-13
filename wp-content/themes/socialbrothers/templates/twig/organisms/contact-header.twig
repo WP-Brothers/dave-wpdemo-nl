@@ -1,0 +1,19 @@
+<section class="w-screen p-2 py-6 md:p-10 md:py-14 {{ wrapper_background }}">
+    <div class='container'>
+        <div class="flex flex-col md:max-w-96 gap-2">
+            {% if title != '' %}
+                <h1 class= 'title title__xl my-4'>{{ title }}</h1>
+            {% endif %}
+            {% include 'atoms/text.twig' with {'text': content|raw} %}
+            {% for contact_link in contact_links %}
+                {% include 'molecules/contact-link.twig' with {
+                    label: contact_link.link_label,
+                    title: contact_link.link.title,
+                    link_temp: contact_link.link,
+                    icon: contact_link.icon,
+                    icon_color: contact_link.icon_color,
+                } %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

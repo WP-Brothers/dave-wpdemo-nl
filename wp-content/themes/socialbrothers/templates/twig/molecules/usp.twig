@@ -1,12 +1,10 @@
 <div class='flex flex-row gap-4 items-normal'>
-
     {% if usp_icon %}
         {% include 'atoms/icon.twig' with {
-            icon  : usp_icon,
-            color : usp_color,
-            size  : usp_size,
+            icon: usp_icon,
+            color: usp_color,
+            size: usp_size,
         } %}
     {% endif %}
-
-    {% include 'atoms/text.twig' with { text : usp_text } %}
+    {% include 'atoms/text.twig' with {text: usp_text} %}
 </div>
