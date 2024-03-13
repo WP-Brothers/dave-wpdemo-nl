@@ -7,6 +7,7 @@
             {% include 'atoms/text.twig' with {'text': content|raw} %}
             {% for contact_link in contact_links %}
                 {% include 'molecules/contact-link.twig' with {
+                    label: contact_link.link_label,
                     title: contact_link.link.title,
                     link_temp: contact_link.link,
                     icon: contact_link.icon,
