@@ -1,63 +1,69 @@
 .sidebar {
-    @apply max-w-80 md:basis-2/6;
+  @apply md:max-w-80 md:basis-2/6 hidden md:block absolute md:relative top-0 right-0 bg-white p-2 z-20;
 
-    .title {
-        @apply w-full pb-4 mb-4 flex items-center justify-between;
+  &.show {
+    @apply md:static block;
+  }
 
-        &::first-letter {
-            @apply uppercase;
-        }
+  .title {
+    @apply w-full pb-4 mb-4 flex items-center justify-between;
 
-        &:not(&.trash) {
-            @apply border-b border-gray-200;
-
-            &:after {
-                @apply content-["\e5cc"] font-iconRound -rotate-90 flex text-primary font-thin text-3xl leading-4 mr-4;
-            }
-    
-            &.open {
-                &:after {
-                    @apply rotate-90;
-                }
-            }
-        }
+    &::first-letter {
+      @apply uppercase;
     }
 
-    .selections {
-        @apply bg-secondary-light p-4 mb-4;
+    &:not(&.trash) {
+      @apply border-b border-gray-200;
 
-        header {
-            @apply flex items-end justify-between;
+      &::after {
+        @apply content-["\e5cc"] font-iconRound -rotate-90 flex text-primary font-thin text-3xl leading-4 mr-4;
+      }
 
-            .facetwp-reset {
-                @apply invisible;
-                
-                &:after {
-                    @apply content-["\e872"] font-iconRound visible flex text-red-500 font-thin text-2xl leading-4;
-                }
-            }
+      &.open {
+
+        &::after {
+          @apply rotate-90;
         }
-
-        .facetwp-selections {
-
-            li {
-                @apply border-2 border-secondary rounded-full px-4 py-2 mb-2 mr-2 text-sm;
-            }
-        }
-    }
- 
-    .facetwp-toggle {
-        @apply text-primary uppercase font-semibold;
-    }
-
-    .facetwp-counter {
-        @apply hidden;
       }
     }
-    .facetwp-type-number_range {
-        @apply flex items-center justify-between gap-2;
+  }
 
-        &.hidden {
-            display: none !important;
+  .selections {
+    @apply bg-secondary-light p-4 mb-4;
+
+    header {
+      @apply flex items-end justify-between;
+
+      .facetwp-reset {
+        @apply invisible;
+
+        &::after {
+          @apply content-["\e872"] font-iconRound visible flex text-red-500 font-thin text-2xl leading-4;
         }
+      }
     }
+
+    .facetwp-selections {
+
+      li {
+        @apply border-2 border-secondary rounded-full px-4 py-2 mb-2 mr-2 text-sm;
+      }
+    }
+  }
+
+  .facetwp-toggle {
+    @apply text-primary uppercase font-semibold;
+  }
+
+  .facetwp-counter {
+    @apply hidden;
+  }
+}
+
+.facetwp-type-number-range {
+  @apply flex items-center justify-between gap-2;
+
+  &.hidden {
+    display: none !important;
+  }
+}

@@ -1,6 +1,5 @@
-
 .overview:not(.upsells .overview) {
-  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ;
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
 }
 
 .woocommerce-pagination {
@@ -11,13 +10,12 @@
   }
 
   li {
-        
 
     .prev,
     .next {
       @apply btn btn--outline text-2xl font-thin font-iconRound;
     }
-    
+
     .current {
       @apply p-2 bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center;
     }
@@ -39,7 +37,7 @@
 .archive {
 
   &__wrapper {
-    @apply flex space-x-6;
+    @apply flex md:space-x-6 relative;
   }
 
   &__products {
