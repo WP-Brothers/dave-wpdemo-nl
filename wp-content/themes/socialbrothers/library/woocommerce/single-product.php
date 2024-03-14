@@ -26,4 +26,6 @@
 
     remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);	
     add_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 50);	
+    
+    remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10);	
 ?>
