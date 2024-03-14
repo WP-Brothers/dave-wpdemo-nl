@@ -19,6 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+
 function set_facetWP_filter_name($name, $additional_classes = '') {
 	echo '<button class="title title__small-medium '.$additional_classes.'" id='. $name .'>' . esc_html(ucfirst(str_replace('_', ' ', __($name, '_SBF')))) . '</button>';
 }
@@ -49,7 +50,7 @@ function display_facetWP_sidebar() {
 	echo '</aside>';
 }
 
-if ( function_exists( 'facetwp_display' ) ) {
+if ( function_exists( 'facetwp_display' ) && !is_product()) {
 	display_facetWP_sidebar();
 }
 

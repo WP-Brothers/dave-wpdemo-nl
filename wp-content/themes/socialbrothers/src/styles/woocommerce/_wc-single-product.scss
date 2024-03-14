@@ -4,7 +4,7 @@
 
   &__wrapper {
     img {
-      height: revert-layer;
+      height: auto;
       @apply rounded-lg;
     }
   }

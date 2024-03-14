@@ -62,8 +62,4 @@
 
 .facetwp-type-number_range {
   @apply flex items-center justify-between gap-2;
-
-  &.hidden {
-    display: none !important;
-  }
 }
