@@ -5,7 +5,7 @@
 
 			{% for info_box in repeater_items %}
 				{% set text_color = info_box.box_background == 'bg-secondary' ? 'text-white' : 'text-black' %}
-				{% set icon_color = info_box.box_background == 'bg-secondary' ? 'text-white' : 'text-secondary' %}
+				{% set icon_color = info_box.box_background == 'bg-secondary' ? 'text-white' : 'text-primary' %}
 
 				{% include 'molecules/info-box.twig' with {
 					box_icon		: info_box.box_icon,
