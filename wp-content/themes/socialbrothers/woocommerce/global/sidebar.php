@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 function set_facetWP_filter_name($name, $additional_classes = '') {
-	echo '<button class="title title__small-medium '.$additional_classes.'" id='. $name .'>' . esc_html(ucfirst(str_replace('_', ' ', __($name, '_SBF')))) . '</button>';
+	echo '<button class="title-size title-size__small-medium '.$additional_classes.'" id='. $name .'>' . esc_html(ucfirst(str_replace('_', ' ', __($name, '_SBF')))) . '</button>';
 }
 
 function display_facetWP_sidebar() {
