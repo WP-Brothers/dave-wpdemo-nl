@@ -2,7 +2,7 @@
     <div class='container'>
         <div class="flex flex-col md:max-w-96 gap-2">
             {% if title != '' %}
-                <h1 class= 'title-size title-size__xl my-4'>{{ title }}</h1>
+                <h1 class= 'h-size h-size__xl my-4'>{{ title }}</h1>
             {% endif %}
             {% include 'atoms/text.twig' with {'text': content|raw} %}
             {% for contact_link in contact_links %}

@@ -20,18 +20,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-function set_facetWP_filter_name($name, $additional_classes = '') {
-	echo '<button class="title-size title-size__small-medium '.$additional_classes.'" id='. $name .'>' . esc_html(ucfirst(str_replace('_', ' ', __($name, '_SBF')))) . '</button>';
+function wpb_set_facetWP_filter_name($name, $additional_classes = '') {
+	echo '<button class="h-size h-size__small-medium '.$additional_classes.'" id='. $name .'>' . esc_html(ucfirst(str_replace('_', ' ', __($name, '_SBF')))) . '</button>';
 }
 
-function display_facetWP_sidebar() {
+function wpb_display_facetWP_sidebar() {
 	echo '<aside class="sidebar">';
-		set_facetWP_filter_name('categorie');
+		wpb_set_facetWP_filter_name('categorie');
 		echo do_shortcode('[facetwp facet="categorie"]');
 
 		echo '<div class="selections">';
 		echo '<header>';
-		set_facetWP_filter_name('Je gekozen filters', 'trash');
+		wpb_set_facetWP_filter_name('Je gekozen filters', 'trash');
 		echo do_shortcode('[facetwp facet="verwijder" selections="true"]');
 		echo '</header>';
 		echo do_shortcode('[facetwp selections="true"]');
@@ -39,19 +39,19 @@ function display_facetWP_sidebar() {
 		echo facetwp_display( 'verwijder' ); 
 		echo '</div>';	
 
-		set_facetWP_filter_name('merk');
+		wpb_set_facetWP_filter_name('merk');
 		echo do_shortcode('[facetwp facet="merk"]'); 
 
-		set_facetWP_filter_name('kleur');
+		wpb_set_facetWP_filter_name('kleur');
 		echo do_shortcode('[facetwp facet="kleur"]');
 
-		set_facetWP_filter_name('prijs'); 
+		wpb_set_facetWP_filter_name('prijs'); 
 		echo do_shortcode('[facetwp facet="prijs"]'); 
 	echo '</aside>';
 }
 
 if ( function_exists( 'facetwp_display' ) && !is_product()) {
-	display_facetWP_sidebar();
+	wpb_display_facetWP_sidebar();
 }
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
