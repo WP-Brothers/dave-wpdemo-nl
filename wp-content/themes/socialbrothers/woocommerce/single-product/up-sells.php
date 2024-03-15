@@ -27,7 +27,7 @@ if ( $upsells ) : ?>
 
 		if ( $heading ) :
 			?>
-			<h4 class="title-size__small"><?php echo esc_html( $heading ); ?></h4>
+			<h4 class="h-size__small"><?php echo esc_html( $heading ); ?></h4>
 		<?php endif; ?>
 
 		<?php woocommerce_product_loop_start(); ?>
