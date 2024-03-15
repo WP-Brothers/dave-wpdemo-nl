@@ -18,7 +18,7 @@
             @apply flex flex-col h-full;
 
             .woocommerce-loop-product__title {
-                @apply h-size h-size__small-medium;
+                @apply text-xl font-bold;
             }
 
             &__content {
